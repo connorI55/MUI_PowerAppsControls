@@ -1,0 +1,20 @@
+2024-03-29 11:43:26.964 - Info	
+Packing C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI_PowerAppsControls\obj\Debug\Metadata to bin\Debug\MUI_PowerAppsControls.zip
+
+2024-03-29 11:43:26.972 - Info	Processing Component: Entities
+2024-03-29 11:43:26.974 - Info	Processing Component: Roles
+2024-03-29 11:43:26.975 - Info	Processing Component: Workflows
+2024-03-29 11:43:26.976 - Info	Processing Component: FieldSecurityProfiles
+2024-03-29 11:43:26.976 - Info	Processing Component: Templates
+2024-03-29 11:43:26.977 - Info	Processing Component: EntityMaps
+2024-03-29 11:43:26.977 - Info	Processing Component: EntityRelationships
+2024-03-29 11:43:26.978 - Info	Processing Component: OrganizationSettings
+2024-03-29 11:43:26.979 - Info	Processing Component: optionsets
+2024-03-29 11:43:26.979 - Info	Processing Component: CustomControls
+2024-03-29 11:43:26.983 - Info	 - CI.MUICheckbox
+2024-03-29 11:43:26.986 - Info	Processing Component: SolutionPluginAssemblies
+2024-03-29 11:43:26.987 - Info	Processing Component: EntityDataProviders
+2024-03-29 11:43:26.990 - Info	Processing Sharded Component Files
+2024-03-29 11:43:27.018 - Info	
+Unmanaged Pack complete.
+

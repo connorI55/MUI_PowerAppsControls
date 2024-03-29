@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "pa7ybluYcc1tBmrvRB+E43vJby1lUGKl9ToXyqKqDG6yqSE2gi6HbiyC/7YdcrI4WnHD+rGougMIKAmrFc0+5g==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Connor\\Documents\\Work Web Resources\\PCF Controls\\MUI Controls\\MUI_PowerAppsControls\\MUI_PowerAppsControls.cdsproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Connor\\.nuget\\packages\\microsoft.netframework.referenceassemblies\\1.0.0\\microsoft.netframework.referenceassemblies.1.0.0.nupkg.sha512",
+    "C:\\Users\\Connor\\.nuget\\packages\\microsoft.netframework.referenceassemblies.net462\\1.0.0\\microsoft.netframework.referenceassemblies.net462.1.0.0.nupkg.sha512",
+    "C:\\Users\\Connor\\.nuget\\packages\\microsoft.powerapps.msbuild.pcf\\1.31.2\\microsoft.powerapps.msbuild.pcf.1.31.2.nupkg.sha512",
+    "C:\\Users\\Connor\\.nuget\\packages\\microsoft.powerapps.msbuild.solution\\1.31.2\\microsoft.powerapps.msbuild.solution.1.31.2.nupkg.sha512"
+  ],
+  "logs": []
+}
