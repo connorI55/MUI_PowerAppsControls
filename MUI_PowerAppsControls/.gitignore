@@ -1,0 +1,8 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# msbuild output directories
+/obj
+/src
+
+# MSBuild Binary and Structured Log
+*.binlog
