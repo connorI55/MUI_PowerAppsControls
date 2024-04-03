@@ -12,7 +12,6 @@
 # msbuild output directories
 /bin
 /obj
-/node_modules
 
 # MSBuild Binary and Structured Log
 *.binlog

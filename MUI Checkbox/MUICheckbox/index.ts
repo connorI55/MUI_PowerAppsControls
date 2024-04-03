@@ -8,11 +8,15 @@ export class MUICheckbox implements ComponentFramework.ReactControl<IInputs, IOu
     private checkboxValue: boolean;
     private autoHeight: number;
     private autoWidth: number;
+    private uniqueId: string;
+    private onChange: (newValue: boolean) => void;
+    private handleAutoSizing: (height: number, width: number) => void;
 
     /**
      * Empty constructor.
      */
-    constructor() { }
+    constructor() { 
+    }
 
     /**
      * Used to initialize the control instance. Controls can kick off remote server calls and other initialization actions here.
@@ -27,6 +31,15 @@ export class MUICheckbox implements ComponentFramework.ReactControl<IInputs, IOu
         state: ComponentFramework.Dictionary
     ): void {
         this.notifyOutputChanged = notifyOutputChanged;
+        this.onChange = (newValue: boolean) => {
+            this.checkboxValue = newValue;
+            this.notifyOutputChanged();
+        };
+        this.handleAutoSizing = (height: number, width: number) => {
+            this.autoHeight = height;
+            this.autoWidth = width;
+            this.notifyOutputChanged();
+        };
     }
 
     /**
@@ -48,15 +61,8 @@ export class MUICheckbox implements ComponentFramework.ReactControl<IInputs, IOu
             wrap: inputs.Wrap.raw,
             appTheme: appTheme,
             isEnabled: context.mode.isControlDisabled,
-            onChange: (newValue: boolean) => {
-                this.checkboxValue = newValue;
-                this.notifyOutputChanged();
-            },
-            handleAutoSizing: (height: number, width: number) => { 
-                this.autoHeight = height;
-                this.autoWidth = width;
-                this.notifyOutputChanged();
-            },
+            onChange: this.onChange,
+            handleAutoSizing: this.handleAutoSizing,
             rippleEffect: inputs.RippleEffect.raw,
             font: inputs.Font?.raw as string,
             fontSize: inputs.FontSize.raw as number,
@@ -88,4 +94,8 @@ export class MUICheckbox implements ComponentFramework.ReactControl<IInputs, IOu
     public destroy(): void {
         // Add code to cleanup control if necessary
     }
+
+    public generateRandomKey() {
+        return `key_${Math.random().toString(36).substr(2, 9)}_${Date.now()}`;
+      }
 }
