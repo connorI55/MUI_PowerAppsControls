@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <manifest>
-  <control namespace="MUIControls" constructor="MUICheckbox" version="1.0.1" display-name-key="MUICheckbox" description-key="Checkbox for user input" control-type="virtual" >
+  <control namespace="MUIControls" constructor="MUISelect" version="0.0.1" display-name-key="MUISelect" description-key="MUISelect description" control-type="virtual" >
     <!--external-service-usage node declares whether this 3rd party PCF control is using external service or not, if yes, this control will be considered as premium and please also add the external domain it is using.
     If it is not using any external service, please set the enabled="false" and DO NOT add any domain below. The "enabled" will be false by default.
     Example1:
@@ -17,25 +17,20 @@
       <domain></domain>
       -->
     </external-service-usage>
-    <!-- property node identifies a specific, configurable piece of data that the control expects from CDS -->
-    
     <!-- input properties -->
-    <property name="Label" display-name-key="Label" description-key="Checkbox label" of-type="SingleLine.Text" usage="input" required="false" default-value="Label"/>
-    <property name="Size" display-name-key="Size" description-key="Checkbox size" of-type="Enum" usage="input" required="true" default-value="medium">
-      <value name="Small" display-name-key="Small">small</value>
-      <value name="Medium" display-name-key="Medium">medium</value>
-      <value name="Large" display-name-key="Large">large</value>
+    <property name="Label" display-name-key="Label" description-key="Textbox label" of-type="SingleLine.Text" usage="input" required="false" default-value="label"/>
+    <property name="Placeholder" display-name-key="Placeholder" description-key="Textbox placeholder" of-type="SingleLine.Text" usage="input" required="false"/>
+    <property name="Default" display-name-key="Default" description-key="Textbox default value" of-type="SingleLine.Text" usage="input" required="false"/>
+    <property name="HelperText" display-name-key="Helper Text" description-key="Textbox helper text" of-type="SingleLine.Text" usage="input" required="false"/>
+    <property name="Style" display-name-key="Style" description-key="Style of text input" of-type="Enum" usage="input" required="false" default-value="outlined">
+      <value name="Filled" display-name-key="Filled">filled</value>
+      <value name="Outlined" display-name-key="Outlined">outlined</value>
     </property>
-    <property name="Default" display-name-key="Default" description-key="Default checkbox value" of-type="TwoOptions" usage="input" required="true" default-value="false">
-      <value name="Checked" display-name-key="true">true</value>
-      <value name="Unchecked" display-name-key="false">false</value>
+    <property name="Required" display-name-key="Required" description-key="Input required" of-type="TwoOptions" usage="input" required="true" default-value="false">
+      <value name="True" display-name-key="True">true</value>
+      <value name="False" display-name-key="False">false</value>
     </property>
-    <property name="LabelPosition" display-name-key="Label Position" description-key="Position of checkbox label" of-type="Enum" usage="input" required="true" default-value="end">
-      <value name="End" display-name-key="End">end</value>
-      <value name="Start" display-name-key="Start">start</value>
-      <value name="Top" display-name-key="Top">top</value>
-      <value name="Bottom" display-name-key="Bottom">bottom</value>
-    </property>
+    <!--
     <property name="Align" display-name-key="Align" description-key="Horizontal alignment" of-type="Enum" usage="input" required="true" default-value="flex-start">
       <value name="Start" display-name-key="Start">flex-start</value>
       <value name="Center" display-name-key="Center">center</value>
@@ -46,9 +41,10 @@
       <value name="Middle" display-name-key="Center">center</value>
       <value name="Bottom" display-name-key="End">flex-end</value>
     </property>
-    <property name="Wrap" display-name-key="Wrap" description-key="Wrap label text" of-type="TwoOptions" usage="input" required="true" default-value="false">
-      <value name="True" display-name-key="True">true</value>
-      <value name="False" display-name-key="False">false</value>
+    -->
+    <property name="ValidationState" display-name-key="Validation State" description-key="Show error if not valid entry" of-type="Enum" usage="input" required="true" default-value="none">
+      <value name="None" display-name-key="None">none</value>
+      <value name="Error" display-name-key="Error">error</value>
     </property>
 
     <!-- theme properties -->
@@ -59,40 +55,30 @@
       <value name="Lighter" display-name-key="Lighter">Lighter</value>
       <value name="Normal" display-name-key="Normal">Normal</value>
       <value name="Semibold" display-name-key="Semibold">Semibold</value>
-       <value name="Bold" display-name-key="Bold">Bold</value>
+      <value name="Bold" display-name-key="Bold">Bold</value>
     </property>
     <property name="PrimaryColor" display-name-key="Primary Color" description-key="Primary color" of-type="SingleLine.Text" usage="input" required="false"/>
-    <property name="RippleEffect" display-name-key="Ripple Effect" description-key="Show or hide ripple effect" of-type="TwoOptions" usage="input" required="true" default-value="true">
-      <value name="True" display-name-key="true">true</value>
-      <value name="False" display-name-key="false">false</value>
-    </property>
 
     <!-- output properties -->
-    <property name="Value" display-name-key="Value" description-key="Is checked" of-type="TwoOptions" usage="output">
-      <value name="true" display-name-key="true">true</value>
-      <value name="false" display-name-key="false">false</value>
-    </property>
+    <property name="Value" display-name-key="Value" description-key="Text input value" of-type="SingleLine.Text" usage="output"/>
+    <!-- 
     <property name="AutoHeight" display-name-key="Auto Height" description-key="Control auto height" of-type="Decimal" usage="output"></property>
     <property name="AutoWidth" display-name-key="Auto Width" description-key="Control auto width" of-type="Decimal" usage="output"></property>
-
-    <!--
-      Property node's of-type attribute can be of-type-group attribute.
-      Example:
-      <type-group name="numbers">
-        <type>Whole.None</type>
-        <type>Currency</type>
-        <type>FP</type>
-        <type>Decimal</type>
-      </type-group>
-      <property name="sampleProperty" display-name-key="Property_Display_Key" description-key="Property_Desc_Key" of-type-group="numbers" usage="bound" required="true" />
     -->
+    <!-- dataset node represents a set of entity records on CDS; allow more than one datasets -->
+    <data-set name="sampleDataSet" display-name-key="Dataset_Display_Key">
+      <!-- 'property-set' node represents a unique, configurable property that each record in the dataset must provide. -->
+      <!-- UNCOMMENT TO ADD PROPERTY-SET NODE
+      <property-set name="samplePropertySet" display-name-key="Property_Display_Key" description-key="Property_Desc_Key" of-type="SingleLine.Text" usage="bound" required="true" />
+      -->
+    </data-set>
     <resources>
       <code path="index.ts" order="1"/>
       <platform-library name="React" version="16.8.6" />
       <!-- <platform-library name="Fluent" version="8.29.0" /> -->
       <!-- UNCOMMENT TO ADD MORE RESOURCES
-      <css path="css/MUICheckbox.css" order="1" />
-      <resx path="strings/MUICheckbox.1033.resx" version="1.0.0" />
+      <css path="css/MUISelect.css" order="1" />
+      <resx path="strings/MUISelect.1033.resx" version="1.0.0" />
       -->
     </resources>
     <!-- UNCOMMENT TO ENABLE THE SPECIFIED API

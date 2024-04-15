@@ -1,6 +1,7 @@
 import * as React from 'react';
-import { Checkbox, FormControlLabel, createTheme, ThemeProvider, appBarClasses } from '@mui/material';
+import { Checkbox, FormControlLabel, createTheme, ThemeProvider} from '@mui/material';
 import { Box } from '@mui/system';
+import * as Utils from '../../utils';
 
 export interface ICheckboxProps {
   label?: string;
@@ -20,72 +21,30 @@ export interface ICheckboxProps {
   fontColor?: string;
   fontWeight?: "Lighter" | "Normal" | "Semibold" | "Bold";
   primaryColor?: string;
+  focus?: boolean;
 }
 
 const MUICheckboxControl: React.FC<ICheckboxProps> = (props) => {
 
-  function mapFontWeight(value: string | undefined) {
-    switch(value) {
-      case "Lighter":
-        return 300;
-      case "Normal":
-        return props.appTheme?.fontWeightRegular || 400;
-      case "Semibold":
-        return props.appTheme?.fontWeightSemibold | 600;
-      case "Bold":
-        return props.appTheme?.fontWeightBold || 700;
-      case 'val':
-        return null;
-      case "":
-        return null;
-      case null:
-        return null;
-      default:
-        throw new Error("Invalid font weight value");
-    }
-  }
-
-  function boxMultiplier(size: string, fontSize: string) {
-    const fontSizeValue = Number(fontSize.replace('px', '').replace('pt', ''));
-    switch(size) {
-      case "small": 
-        return fontSizeValue * 1.3;
-      case "medium": 
-        return fontSizeValue * 2;
-      case "large": 
-        return fontSizeValue * 2.5;
-      default:
-        throw new Error("Invalid size value");
-    }
-  }
   const boxRef = React.useRef<HTMLDivElement>(null);
   const formRef = React.useRef<HTMLDivElement>(null);
   const [state, setState] = React.useState<boolean>(props.value || false);
   const theme = createTheme({
     palette: {
       primary: {
-        main: handleDefault(props.primaryColor) || props.appTheme?.colorBrandForeground1 || "#0078d4"
+        main: Utils.handleDefault(props.primaryColor) || props.appTheme?.colorBrandForeground1 || "#0078d4"
       }
     },
     typography: {
-      fontFamily: handleDefault(props.font) || props.appTheme?.fontFamilyBase || "Segoe UI",
-      //fontSize: props.appTheme?.fontSizeBase300, 
+      fontFamily: Utils.handleDefault(props.font) || props.appTheme?.fontFamilyBase || "Segoe UI",
       body1: {
         fontSize: props.fontSize || props.appTheme?.fontSizeBase300 || 14,
-        fontWeight: mapFontWeight(props.fontWeight) || props.appTheme?.fontWeightRegular || "Normal",
+        fontWeight: Utils.mapFontWeight(props.fontWeight, props) || props.appTheme?.fontWeightRegular || "Normal",
       }
     }
   });
-
   const [key] = React.useState(() => {
-    function generateGUID() {
-      return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-          const r = (Math.random() * 16) | 0,
-          v = c == 'x' ? r : (r & 0x3) | 0x8;
-          return v.toString(16);
-      });
-    }
-    return generateGUID();
+    return Utils.generateGUID();
   });
 
   React.useLayoutEffect(() => {
@@ -105,12 +64,8 @@ const MUICheckboxControl: React.FC<ICheckboxProps> = (props) => {
      setState(props.value);
    }, [props.value]);
 
-  //  React.useEffect(() => {
-  //    props.onChange(state);
-  //  }, [state]);
-
-   function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
-      const newValue = event.target.checked;
+   function handleChange(state: boolean) {
+      const newValue = state
       setState(newValue);
       props.onChange(newValue); 
    }
@@ -120,7 +75,7 @@ const MUICheckboxControl: React.FC<ICheckboxProps> = (props) => {
   return (
     <ThemeProvider theme={theme} key={key}>
       <Box 
-      ref={boxRef}
+        ref={boxRef}
         sx={
           { 
             margin: "5px",
@@ -141,10 +96,10 @@ const MUICheckboxControl: React.FC<ICheckboxProps> = (props) => {
           control={
             <Checkbox
             sx={{
-              '& .MuiSvgIcon-root': { fontSize: boxMultiplier(props.size, String(theme.typography.body1.fontSize)) },
+              '& .MuiSvgIcon-root': { fontSize: Utils.boxMultiplier(props.size, String(theme.typography.body1.fontSize)) },
               }}
               checked={state} 
-              onChange={(event) => handleChange(event)}
+              onClick={(event) => handleChange(!state)}
               disabled={props.isEnabled}
               disableRipple={!props.rippleEffect}
             />
@@ -158,7 +113,3 @@ const MUICheckboxControl: React.FC<ICheckboxProps> = (props) => {
 }
 
 export default MUICheckboxControl;
-
-function handleDefault(value: string | undefined) {
-  return value === 'val' ? null : value;
-}

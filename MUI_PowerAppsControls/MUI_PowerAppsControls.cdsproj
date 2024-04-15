@@ -50,6 +50,7 @@
   
   <ItemGroup>
     <ProjectReference Include="..\MUI Checkbox\MUI Canvas App Controls.pcfproj" />
+    <ProjectReference Include="..\MUI Text Field\MUI Text Field.pcfproj" />
   </ItemGroup>
 
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />

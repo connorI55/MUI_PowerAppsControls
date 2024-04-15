@@ -1,22 +1,20 @@
 import { IInputs, IOutputs } from "./generated/ManifestTypes";
-import MUICheckboxControl, { ICheckboxProps } from "./App";
+import MUISelectControl_Class from "./App";
+import { ISelectProps } from "./SelectControl";
 import * as React from "react";
+//import DataSetInterfaces = ComponentFramework.PropertyHelper.DataSetApi;
+//type DataSet = ComponentFramework.PropertyTypes.DataSet;
 
-export class MUICheckbox implements ComponentFramework.ReactControl<IInputs, IOutputs> {
+export class MUISelect implements ComponentFramework.ReactControl<IInputs, IOutputs> {
     private theComponent: ComponentFramework.ReactControl<IInputs, IOutputs>;
     private notifyOutputChanged: () => void;
-    private checkboxValue: boolean;
-    private autoHeight: number;
-    private autoWidth: number;
-    private uniqueId: string;
-    private onChange: (newValue: boolean) => void;
-    private handleAutoSizing: (height: number, width: number) => void;
+    //private textboxValue: string | undefined;
+    private handleEvent: (newValue: string) => void;
 
     /**
      * Empty constructor.
      */
-    constructor() { 
-    }
+    constructor() { }
 
     /**
      * Used to initialize the control instance. Controls can kick off remote server calls and other initialization actions here.
@@ -31,15 +29,10 @@ export class MUICheckbox implements ComponentFramework.ReactControl<IInputs, IOu
         state: ComponentFramework.Dictionary
     ): void {
         this.notifyOutputChanged = notifyOutputChanged;
-        this.onChange = (newValue: boolean) => {
-            this.checkboxValue = newValue;
-            this.notifyOutputChanged();
-        };
-        this.handleAutoSizing = (height: number, width: number) => {
-            this.autoHeight = height;
-            this.autoWidth = width;
-            this.notifyOutputChanged();
-        };
+        // this.handleEvent = (newValue: string) => {
+        //     this.textboxValue = newValue;
+        //     this.notifyOutputChanged();
+        // };
     }
 
     /**
@@ -50,41 +43,43 @@ export class MUICheckbox implements ComponentFramework.ReactControl<IInputs, IOu
     public updateView(context: ComponentFramework.Context<IInputs>): React.ReactElement {
         const inputs = context.parameters
         const appTheme = context.fluentDesignLanguage?.tokenTheme
-        const props: ICheckboxProps = 
+        const props: ISelectProps =
         { 
             label: inputs.Label?.raw || "",
-            size: inputs.Size.raw,
-            value: inputs.Default.raw,
-            labelPosition: inputs.LabelPosition.raw,
-            align: inputs.Align.raw,
-            verticalAlign: inputs.VerticalAlign.raw,
-            wrap: inputs.Wrap.raw,
+            //style: inputs.Style.raw,
+            default: inputs.Default?.raw || "",
+            placeholder: inputs.Placeholder?.raw || "",
+            helperText: inputs.HelperText?.raw || "",
+            //size: inputs.Size.raw,
+            //mode: inputs.Mode.raw,
+            //rows: inputs.Rows.raw as number,
+            required: inputs.Required.raw,
+            //adornmnetPosition: inputs.AdornmentPosition.raw,
+            //adornmentValue: inputs.AdornmentValue?.raw || "",
+            //align: inputs.Align.raw,
+            //verticalAlign: inputs.VerticalAlign.raw,
             appTheme: appTheme,
             isEnabled: context.mode.isControlDisabled,
-            onChange: this.onChange,
-            handleAutoSizing: this.handleAutoSizing,
-            rippleEffect: inputs.RippleEffect.raw,
+            //handleEvent: this.handleEvent,
+            //handleAutoSizing: this.handleAutoSizing,
             font: inputs.Font?.raw as string,
             fontSize: inputs.FontSize.raw as number,
             fontWeight: inputs.FontWeight.raw,
             fontColor: inputs.FontColor?.raw as string,
-            primaryColor: inputs.PrimaryColor?.raw as string
+            primaryColor: inputs.PrimaryColor?.raw as string,
+            validationState: inputs.ValidationState.raw
         };
         return React.createElement(
-            MUICheckboxControl, props
+            MUISelectControl_Class, props
         );
     }
 
     /**
      * It is called by the framework prior to a control receiving new data.
-     * @returns an object based on nomenclature defined in manifest, expecting object[s] for property marked as “bound” or “output”
+     * @returns an object based on nomenclature defined in manifest, expecting object[s] for property marked as "bound" or "output"
      */
     public getOutputs(): IOutputs {
-        return { 
-            Value: this.checkboxValue,
-            AutoHeight: this.autoHeight,
-            AutoWidth: this.autoWidth
-        };
+        return { };
     }
 
     /**
@@ -94,8 +89,4 @@ export class MUICheckbox implements ComponentFramework.ReactControl<IInputs, IOu
     public destroy(): void {
         // Add code to cleanup control if necessary
     }
-
-    public generateRandomKey() {
-        return `key_${Math.random().toString(36).substr(2, 9)}_${Date.now()}`;
-      }
 }

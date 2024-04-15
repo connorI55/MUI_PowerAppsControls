@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <manifest>
-  <control namespace="CI" constructor="MUICheckbox" version="0.0.1" display-name-key="MUICheckbox" description-key="MUICheckbox description" control-type="virtual" api-version="1.3.11">
+  <control namespace="MUIControls" constructor="MUICheckbox" version="1.0.1" display-name-key="MUICheckbox" description-key="Checkbox for user input" control-type="virtual" api-version="1.3.11">
     <external-service-usage enabled="false"/>
     <property name="Label" display-name-key="Label" description-key="Checkbox label" of-type="SingleLine.Text" usage="input" required="false" default-value="Label"/>
     <property name="Size" display-name-key="Size" description-key="Checkbox size" of-type="Enum" usage="input" required="true" default-value="medium">
