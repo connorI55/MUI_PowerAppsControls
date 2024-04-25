@@ -6,7 +6,6 @@ import { Box } from '@mui/system';
 
 export interface ITextFieldProps {
   label?: string;
-  //size: "small" | "medium" | "large";
   default?: string;
   placeholder?: string;
   helperText?: string;
@@ -17,12 +16,12 @@ export interface ITextFieldProps {
   required: boolean;
   adornmentValue?: string;
   adornmnetPosition: "start" | "end";
-  //align: "flex-start" | "center" | "flex-end";
+  fullHeight: boolean;
   verticalAlign: "flex-start" | "center" | "flex-end";
   appTheme: ComponentFramework.Theme,
   isEnabled: boolean;
   handleEvent: (newValue: string) => void;
-  //handleAutoSizing: (height: number, width: number) => void;
+  handleAutoSizing: (height: number) => void;
   font?: string;
   fontSize?: number;
   fontColor?: string;
@@ -39,22 +38,50 @@ const MUITextField_Control: React.FC<ITextFieldProps> = (props) => {
   const theme = createTheme({
     palette: {
       primary: {
-        main: Utils.handleDefault(props.primaryColor) || props.appTheme?.colorBrandForeground1 || "#0078d4"
-      }
+        main: Utils.handleDefault(props.primaryColor) || props.appTheme?.colorBrandForeground1 || "#0078d4",
+      },
     },
     typography: {
       fontFamily: Utils.handleDefault(props.font) || props.appTheme?.fontFamilyBase || "Segoe UI",
       body1: {
         fontSize: props.fontSize || props.appTheme?.fontSizeBase300 || 14,
         fontWeight: Utils.mapFontWeight(props.fontWeight, props) || props.appTheme?.fontWeightRegular || "Normal",
-      }
-    }
+      },
+    },
+    components: {
+      MuiFormControl: {
+        styleOverrides: {
+          root: {
+            height: props.fullHeight ? '100%' : 'auto', 
+          },
+        },
+      },
+   
+      MuiInputBase: {
+        styleOverrides: {
+          root: {
+            height: props.fullHeight ? '100%' : 'auto', 
+          },
+        },
+      },
+    },
   });
   const adornmentProps = 
     Utils.handleDefault(props.adornmentValue) && props.adornmnetPosition 
       ? { InputProps: handleAdornments(props.adornmentValue, props.adornmnetPosition) } 
       : {};
-  const boxRef = React.useRef<HTMLDivElement>(null);
+  const formRef = React.useRef<HTMLDivElement>(null);
+
+  React.useLayoutEffect(() => {
+    if (formRef.current) {
+      const currentHeight = formRef.current.clientHeight;
+      props.handleAutoSizing(currentHeight);
+    }
+  }, [props.font, props.fontSize, props.fontWeight, props.label, props.size, props.fullHeight, props.helperText, props.style]);
+
+
+
+  console.log("rendered")
 
   return (
     <ThemeProvider theme={theme}>
@@ -63,13 +90,15 @@ const MUITextField_Control: React.FC<ITextFieldProps> = (props) => {
           { 
             display: "flex",
             flexDirection: "column",
-            justifyContent: "center"
+            justifyContent: props.verticalAlign,
+            width: "100%"
           }
         }
       >
         <TextField 
           fullWidth
           hiddenLabel
+          disabled = {props.isEnabled}
           required = {props.required}
           multiline= {props.mode === "multiline"}
           rows={props.mode === "multiline" ? props.rows : 0}
@@ -84,6 +113,7 @@ const MUITextField_Control: React.FC<ITextFieldProps> = (props) => {
           error = {props.validationState == "error"}
           onChange={(event) => props.handleEvent(event.target.value)}
           margin="dense"
+          ref={formRef}
         />
       </Box>
    

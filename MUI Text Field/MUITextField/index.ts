@@ -7,12 +7,23 @@ export class MUITextField implements ComponentFramework.ReactControl<IInputs, IO
     private theComponent: ComponentFramework.ReactControl<IInputs, IOutputs>;
     private notifyOutputChanged: () => void;
     private textboxValue: string | undefined;
-    private handleEvent: (newValue: string) => void;
+    private autoHeight: number;
 
     /**
      * Empty constructor.
      */
-    constructor() { }
+    constructor() { 
+        this.handleEvent = this.handleEvent.bind(this);
+        this.handleAutoSizing = this.handleAutoSizing.bind(this);
+    }
+    handleEvent = (newValue: string) => {
+        this.textboxValue = newValue;
+        this.notifyOutputChanged();
+    };
+    handleAutoSizing(height: number) {
+        this.autoHeight = height;
+        this.notifyOutputChanged();
+    }
 
     /**
      * Used to initialize the control instance. Controls can kick off remote server calls and other initialization actions here.
@@ -27,10 +38,6 @@ export class MUITextField implements ComponentFramework.ReactControl<IInputs, IO
         state: ComponentFramework.Dictionary
     ): void {
         this.notifyOutputChanged = notifyOutputChanged;
-        this.handleEvent = (newValue: string) => {
-            this.textboxValue = newValue;
-            this.notifyOutputChanged();
-        };
     }
 
     /**
@@ -39,6 +46,7 @@ export class MUITextField implements ComponentFramework.ReactControl<IInputs, IO
      * @returns ReactElement root react element for the control
      */
     public updateView(context: ComponentFramework.Context<IInputs>): React.ReactElement {
+        console.log("updateView Called")
         const inputs = context.parameters
         const appTheme = context.fluentDesignLanguage?.tokenTheme
         const props: ITextFieldProps =
@@ -50,16 +58,16 @@ export class MUITextField implements ComponentFramework.ReactControl<IInputs, IO
             helperText: inputs.HelperText?.raw || "",
             size: inputs.Size.raw,
             mode: inputs.Mode.raw,
-            rows: inputs.Rows.raw as number,
+            rows: inputs.MaxRows.raw as number,
             required: inputs.Required.raw,
             adornmnetPosition: inputs.AdornmentPosition.raw,
             adornmentValue: inputs.AdornmentValue?.raw || "",
-            //align: inputs.Align.raw,
+            fullHeight: inputs.FullHeight.raw,
             verticalAlign: inputs.VerticalAlign.raw,
             appTheme: appTheme,
             isEnabled: context.mode.isControlDisabled,
             handleEvent: this.handleEvent,
-            //handleAutoSizing: this.handleAutoSizing,
+            handleAutoSizing: this.handleAutoSizing,
             font: inputs.Font?.raw as string,
             fontSize: inputs.FontSize.raw as number,
             fontWeight: inputs.FontWeight.raw,
@@ -78,7 +86,8 @@ export class MUITextField implements ComponentFramework.ReactControl<IInputs, IO
      */
     public getOutputs(): IOutputs {
         return { 
-            Value: this.textboxValue
+            Value: this.textboxValue,
+            AutoHeight: this.autoHeight
         };
     }
 

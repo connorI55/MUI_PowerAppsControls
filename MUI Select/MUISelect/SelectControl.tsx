@@ -39,7 +39,7 @@ const MUISelectControl: React.FC<ISelectProps> = (props) => {
     const handleChange = (event: SelectChangeEvent) => {
       setAge(event.target.value as string);
     };
-  
+    console.log("rendered")
     return (
         <FormControl fullWidth>
           <InputLabel id="demo-simple-select-label">Age</InputLabel>

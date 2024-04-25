@@ -32,7 +32,7 @@
       <value name="SingleLine" display-name-key="Single Line">singleline</value>
       <value name="Multiline" display-name-key="Multiline">multiline</value>
     </property>
-    <property name="Rows" display-name-key="Rows" description-key="Number of rows to display" of-type="Whole.None" usage="input" required="false"/>
+    <property name="MaxRows" display-name-key="Max Rows" description-key="Maximum number of rows to display" of-type="Whole.None" usage="input" required="false"/>
     <property name="Size" display-name-key="Size" description-key="Checkbox size" of-type="Enum" usage="input" required="true" default-value="medium">
       <value name="Small" display-name-key="Small">small</value>
       <value name="Medium" display-name-key="Medium">medium</value>
@@ -53,6 +53,10 @@
       <value name="End" display-name-key="End">flex-end</value>
     </property>
      -->
+    <property name="FullHeight" display-name-key="Full Height" description-key="Should control expand to full height" of-type="TwoOptions" usage="input" required="true" default-value="false">
+      <value name="True" display-name-key="True">true</value>
+      <value name="False" display-name-key="False">false</value>
+    </property>
     <property name="VerticalAlign" display-name-key="Vertical Align" description-key="Vertical alignment" of-type="Enum" usage="input" required="true" default-value="center">
       <value name="Top" display-name-key="Start">flex-start</value>
       <value name="Middle" display-name-key="Center">center</value>
@@ -77,10 +81,7 @@
 
     <!-- output properties -->
     <property name="Value" display-name-key="Value" description-key="Text input value" of-type="SingleLine.Text" usage="output"/>
-    <!-- 
     <property name="AutoHeight" display-name-key="Auto Height" description-key="Control auto height" of-type="Decimal" usage="output"></property>
-    <property name="AutoWidth" display-name-key="Auto Width" description-key="Control auto width" of-type="Decimal" usage="output"></property>
-    -->
 
     <resources>
       <code path="index.ts" order="1"/>

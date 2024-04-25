@@ -41,6 +41,7 @@ export class MUISelect implements ComponentFramework.ReactControl<IInputs, IOutp
      * @returns ReactElement root react element for the control
      */
     public updateView(context: ComponentFramework.Context<IInputs>): React.ReactElement {
+        console.log("updateView Called")
         const inputs = context.parameters
         const appTheme = context.fluentDesignLanguage?.tokenTheme
         const props: ISelectProps =
