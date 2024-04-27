@@ -41,6 +41,16 @@ const MUICheckboxControl: React.FC<ICheckboxProps> = (props) => {
         fontSize: props.fontSize || props.appTheme?.fontSizeBase300 || 14,
         fontWeight: Utils.mapFontWeight(props.fontWeight, props) || props.appTheme?.fontWeightRegular || "Normal",
       }
+    },
+    components: {
+      MuiTouchRipple: {
+        styleOverrides: {
+          root: { 
+            height: '100%', 
+            width: '100%', 
+          },
+        },
+      },
     }
   });
   const key = React.useMemo(() => Utils.generateGUID(), []);

@@ -62,6 +62,9 @@ const MUITextField_Control: React.FC<ITextFieldProps> = (props) => {
           root: {
             height: props.fullHeight ? '100%' : 'auto', 
           },
+          input: { 
+            color: props.fontColor || "", 
+          },
         },
       },
     },
@@ -71,15 +74,18 @@ const MUITextField_Control: React.FC<ITextFieldProps> = (props) => {
       ? { InputProps: handleAdornments(props.adornmentValue, props.adornmnetPosition) } 
       : {};
   const formRef = React.useRef<HTMLDivElement>(null);
+  const inputRef = React.useRef('');
 
-  React.useLayoutEffect(() => {
+  React.useEffect(() => {
     if (formRef.current) {
       const currentHeight = formRef.current.clientHeight;
-      props.handleAutoSizing(currentHeight);
+      const style = window.getComputedStyle(formRef.current);
+      const marginLeft = parseFloat(style.marginTop);
+      const marginRight = parseFloat(style.marginBottom);
+      const totalMargin = marginLeft + marginRight;
+      props.handleAutoSizing(currentHeight + totalMargin);
     }
-  }, [props.font, props.fontSize, props.fontWeight, props.label, props.size, props.fullHeight, props.helperText, props.style]);
-
-
+  }, [props.font, props.fontSize, props.fontWeight, props.label, props.size, props.fullHeight, props.helperText, props.style, inputRef.current]);
 
   console.log("rendered")
 
@@ -103,7 +109,7 @@ const MUITextField_Control: React.FC<ITextFieldProps> = (props) => {
           multiline= {props.mode === "multiline"}
           rows={props.mode === "multiline" ? props.rows : 0}
           id={key} 
-          defaultValue={Utils.handleDefault(props.default)}
+          defaultValue={Utils.handleDefault(props.default) || ""}
           placeholder={props.placeholder}
           label={props.label}
           variant={props.style} 
@@ -111,7 +117,10 @@ const MUITextField_Control: React.FC<ITextFieldProps> = (props) => {
           helperText = {Utils.handleDefault(props.helperText)}
           {...adornmentProps}
           error = {props.validationState == "error"}
-          onChange={(event) => props.handleEvent(event.target.value)}
+          onChange={(event) => {
+            inputRef.current = event.target.value;
+            props.handleEvent(event.target.value);
+          }}
           margin="dense"
           ref={formRef}
         />
