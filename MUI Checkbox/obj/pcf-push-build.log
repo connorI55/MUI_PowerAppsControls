@@ -1,4 +1,4 @@
-﻿Build started 4/26/2024 8:15:55 PM.
+﻿Build started 5/6/2024 2:59:24 PM.
 Logging verbosity is set to: Detailed.Process = "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\MSBuild.exe"
 MSBuild executable path = "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\MSBuild.exe"
 Command line arguments = ""C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\MSBuild.exe" /t:rebuild /restore /p:PcfForceUpdate=true /p:Configuration=Debug -nologo -verbosity:minimal /bl:"C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\pcf-push-build.binlog" -fileLoggerParameters:LogFile="C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\pcf-push-build.log";Verbosity=detailed;Encoding=UTF-8"
@@ -1462,7 +1462,7 @@ Task "Message"
 Done executing task "Message".
 Added Item(s): 
     _RestoreGraphEntry=
-        319d0498-fcf0-4d18-ac67-7931f42ee13b
+        fdce8085-6e45-489c-af59-9ceefd5a5bd5
                 ProjectUniqueName=C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\MUI Canvas App Controls.pcfproj
                 Type=RestoreSpec
 Done building target "_GenerateRestoreSpecs" in project "MUI Canvas App Controls.pcfproj".
@@ -1475,7 +1475,7 @@ Done building target "_GetRestoreSettingsOverrides" in project "MUI Canvas App C
 Target "_GetRestoreSettingsPerFramework" in file "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\NuGet\NuGet.targets" from project "C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\MUI Canvas App Controls.pcfproj" (target "_GetRestoreSettingsCurrentProject" depends on it):
 Added Item(s): 
     _RestoreSettingsPerFramework=
-        489f7573-c99b-4e2a-a5d7-456872d6f512
+        c8673d10-7300-4950-b6a7-72066a2f3d35
                 RestoreAdditionalProjectFallbackFolders=
                 RestoreAdditionalProjectFallbackFoldersExcludes=
                 RestoreAdditionalProjectSources=
@@ -1491,7 +1491,7 @@ Task "GetRestoreSettingsTask"
   Task Parameter:ProjectUniqueName=C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\MUI Canvas App Controls.pcfproj
   Task Parameter:
       RestoreSettingsPerFramework=
-          489f7573-c99b-4e2a-a5d7-456872d6f512
+          c8673d10-7300-4950-b6a7-72066a2f3d35
                   RestoreAdditionalProjectFallbackFolders=
                   RestoreAdditionalProjectFallbackFoldersExcludes=
                   RestoreAdditionalProjectSources=
@@ -1580,7 +1580,7 @@ Task "Message"
 Done executing task "Message".
 Added Item(s): 
     _RestoreGraphEntry=
-        4f6480e4-c6c5-4720-a4e8-93fa7280d5b6
+        9dbf3ec6-d58f-4cc9-8449-3057c8df07ad
                 ProjectUniqueName=C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\PowerAppsToolsTemp_ci.cdsproj
                 Type=RestoreSpec
 Done building target "_GenerateRestoreSpecs" in project "PowerAppsToolsTemp_ci.cdsproj".
@@ -1593,7 +1593,7 @@ Done building target "_GetRestoreSettingsOverrides" in project "PowerAppsToolsTe
 Target "_GetRestoreSettingsPerFramework" in file "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\NuGet\NuGet.targets" from project "C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\PowerAppsToolsTemp_ci.cdsproj" (target "_GetRestoreSettingsCurrentProject" depends on it):
 Added Item(s): 
     _RestoreSettingsPerFramework=
-        b792802a-8886-41f9-aec7-a280b7e4adc1
+        e3d6a8fa-78b2-454e-b551-5e7bc6a28d58
                 RestoreAdditionalProjectFallbackFolders=
                 RestoreAdditionalProjectFallbackFoldersExcludes=
                 RestoreAdditionalProjectSources=
@@ -1609,7 +1609,7 @@ Task "GetRestoreSettingsTask"
   Task Parameter:ProjectUniqueName=C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\PowerAppsToolsTemp_ci.cdsproj
   Task Parameter:
       RestoreSettingsPerFramework=
-          b792802a-8886-41f9-aec7-a280b7e4adc1
+          e3d6a8fa-78b2-454e-b551-5e7bc6a28d58
                   RestoreAdditionalProjectFallbackFolders=
                   RestoreAdditionalProjectFallbackFoldersExcludes=
                   RestoreAdditionalProjectSources=
@@ -1665,13 +1665,13 @@ Done Building Project "C:\Users\Connor\Documents\Work Web Resources\PCF Controls
 _GenerateRestoreGraph:
   Output Item(s): 
       _RestoreGraphEntry=
-          319d0498-fcf0-4d18-ac67-7931f42ee13b
+          fdce8085-6e45-489c-af59-9ceefd5a5bd5
                   MSBuildSourceProjectFile=C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\PowerAppsToolsTemp_ci.cdsproj
                   MSBuildSourceTargetName=_IsProjectRestoreSupported
                   OriginalItemSpec=C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\MUI Canvas App Controls.pcfproj
                   ProjectUniqueName=C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\MUI Canvas App Controls.pcfproj
                   Type=RestoreSpec
-          4f6480e4-c6c5-4720-a4e8-93fa7280d5b6
+          9dbf3ec6-d58f-4cc9-8449-3057c8df07ad
                   MSBuildSourceProjectFile=C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\PowerAppsToolsTemp_ci.cdsproj
                   MSBuildSourceTargetName=_IsProjectRestoreSupported
                   OriginalItemSpec=C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\PowerAppsToolsTemp_ci.cdsproj
@@ -1734,7 +1734,7 @@ Set Property: _RestoreProjectVersion=1.0.0
 Set Property: _RestoreProjectVersion=1.0.0.0
 Added Item(s): 
     _RestoreGraphEntry=
-        38cc5bc2-9af4-4d28-ad33-8c5715bfad25
+        2e559d55-753f-4c40-8342-23fa20cbcc82
                 ConfigFilePaths=C:\Users\Connor\AppData\Roaming\NuGet\NuGet.Config;C:\Program Files (x86)\NuGet\Config\Microsoft.VisualStudio.Offline.config
                 CrossTargeting=
                 FallbackFolders=
@@ -1796,13 +1796,13 @@ Task "GetRestorePackageReferencesTask"
   (in) PackageReferences 'Microsoft.PowerApps.MSBuild.Pcf;Microsoft.NETFramework.ReferenceAssemblies'
   Output Item(s): 
       _RestoreGraphEntry=
-          2e6b6ee8-628c-4b2a-b2d9-a8bfa57b9776
+          cdccc011-8fd4-4597-8ab9-9fc41eb1b2af
                   Id=Microsoft.PowerApps.MSBuild.Pcf
                   ProjectUniqueName=C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\MUI Canvas App Controls.pcfproj
                   TargetFrameworks=net462
                   Type=Dependency
                   VersionRange=1.*
-          575244c5-5ab1-45ec-9cf5-559f59a0719d
+          5e3f5606-0fd9-469a-96cf-58115555d5fe
                   Id=Microsoft.NETFramework.ReferenceAssemblies
                   PrivateAssets=All
                   ProjectUniqueName=C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\MUI Canvas App Controls.pcfproj
@@ -1829,7 +1829,7 @@ Task "GetRestoreFrameworkReferencesTask"
 Done executing task "GetRestoreFrameworkReferencesTask".
 Added Item(s): 
     _RestoreGraphEntry=
-        de37ddda-f511-4131-b5b0-3e06f1ed0353
+        b1470df9-e547-4b03-b63f-6d185c32779b
                 AssetTargetFallback=
                 PackageTargetFallback=
                 ProjectUniqueName=C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\MUI Canvas App Controls.pcfproj
@@ -1892,7 +1892,7 @@ Set Property: _RestoreProjectVersion=1.0.0
 Set Property: _RestoreProjectVersion=1.0.0.0
 Added Item(s): 
     _RestoreGraphEntry=
-        898f9391-defe-4260-af6f-d3e8335e5593
+        ce9a62c1-e60b-409f-af66-73b45f36aca6
                 ConfigFilePaths=C:\Users\Connor\AppData\Roaming\NuGet\NuGet.Config;C:\Program Files (x86)\NuGet\Config\Microsoft.VisualStudio.Offline.config
                 CrossTargeting=
                 FallbackFolders=
@@ -1945,7 +1945,7 @@ Task "GetRestoreProjectReferencesTask"
   (in) ParentProjectPath 'C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\PowerAppsToolsTemp_ci.cdsproj'
   Output Item(s): 
       _RestoreGraphEntry=
-          8e0856ab-9bbe-485a-8aba-b5e77b60af3e
+          4f356c45-be1d-4a11-9665-1f493059eac5
                   ProjectPath=C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\MUI Canvas App Controls.pcfproj
                   ProjectReferenceUniqueName=C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\MUI Canvas App Controls.pcfproj
                   ProjectUniqueName=C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\PowerAppsToolsTemp_ci.cdsproj
@@ -1968,13 +1968,13 @@ Task "GetRestorePackageReferencesTask"
   (in) PackageReferences 'Microsoft.PowerApps.MSBuild.Solution;Microsoft.NETFramework.ReferenceAssemblies'
   Output Item(s): 
       _RestoreGraphEntry=
-          71460e84-df66-4e77-a546-3ff191b7af4a
+          d42d4254-e815-4d53-9092-64591672dfa7
                   Id=Microsoft.PowerApps.MSBuild.Solution
                   ProjectUniqueName=C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\PowerAppsToolsTemp_ci.cdsproj
                   TargetFrameworks=net462
                   Type=Dependency
                   VersionRange=1.*
-          122ead9d-0bb3-40e3-9056-e1f4109108af
+          c68560ca-e2e2-44c6-b97e-b49118e62f1d
                   Id=Microsoft.NETFramework.ReferenceAssemblies
                   PrivateAssets=All
                   ProjectUniqueName=C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\PowerAppsToolsTemp_ci.cdsproj
@@ -2001,7 +2001,7 @@ Task "GetRestoreFrameworkReferencesTask"
 Done executing task "GetRestoreFrameworkReferencesTask".
 Added Item(s): 
     _RestoreGraphEntry=
-        6a372900-f184-4991-a030-bbd5d1648d51
+        61ba556f-e08f-4c59-8760-46842b7ca1a3
                 AssetTargetFallback=
                 PackageTargetFallback=
                 ProjectUniqueName=C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\PowerAppsToolsTemp_ci.cdsproj
@@ -2027,13 +2027,13 @@ Done Building Project "C:\Users\Connor\Documents\Work Web Resources\PCF Controls
 _GenerateRestoreGraph:
   Output Item(s): 
       _RestoreGraphEntry=
-          319d0498-fcf0-4d18-ac67-7931f42ee13b
+          fdce8085-6e45-489c-af59-9ceefd5a5bd5
                   MSBuildSourceProjectFile=C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\PowerAppsToolsTemp_ci.cdsproj
                   MSBuildSourceTargetName=_IsProjectRestoreSupported
                   OriginalItemSpec=C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\MUI Canvas App Controls.pcfproj
                   ProjectUniqueName=C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\MUI Canvas App Controls.pcfproj
                   Type=RestoreSpec
-          38cc5bc2-9af4-4d28-ad33-8c5715bfad25
+          2e559d55-753f-4c40-8342-23fa20cbcc82
                   ConfigFilePaths=C:\Users\Connor\AppData\Roaming\NuGet\NuGet.Config;C:\Program Files (x86)\NuGet\Config\Microsoft.VisualStudio.Offline.config
                   CrossTargeting=
                   FallbackFolders=
@@ -2061,7 +2061,7 @@ _GenerateRestoreGraph:
                   Version=1.0.0.0
                   WarningsAsErrors=
                   _CentralPackageVersionsEnabled=
-          2e6b6ee8-628c-4b2a-b2d9-a8bfa57b9776
+          cdccc011-8fd4-4597-8ab9-9fc41eb1b2af
                   Id=Microsoft.PowerApps.MSBuild.Pcf
                   MSBuildSourceProjectFile=C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\PowerAppsToolsTemp_ci.cdsproj
                   MSBuildSourceTargetName=_IsProjectRestoreSupported
@@ -2070,7 +2070,7 @@ _GenerateRestoreGraph:
                   TargetFrameworks=net462
                   Type=Dependency
                   VersionRange=1.*
-          575244c5-5ab1-45ec-9cf5-559f59a0719d
+          5e3f5606-0fd9-469a-96cf-58115555d5fe
                   Id=Microsoft.NETFramework.ReferenceAssemblies
                   MSBuildSourceProjectFile=C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\PowerAppsToolsTemp_ci.cdsproj
                   MSBuildSourceTargetName=_IsProjectRestoreSupported
@@ -2080,7 +2080,7 @@ _GenerateRestoreGraph:
                   TargetFrameworks=net462
                   Type=Dependency
                   VersionRange=1.0.0
-          de37ddda-f511-4131-b5b0-3e06f1ed0353
+          b1470df9-e547-4b03-b63f-6d185c32779b
                   AssetTargetFallback=
                   MSBuildSourceProjectFile=C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\PowerAppsToolsTemp_ci.cdsproj
                   MSBuildSourceTargetName=_IsProjectRestoreSupported
@@ -2098,13 +2098,13 @@ _GenerateRestoreGraph:
                   TargetPlatformMoniker=Windows,Version=7.0
                   TargetPlatformVersion=7.0
                   Type=TargetFrameworkInformation
-          4f6480e4-c6c5-4720-a4e8-93fa7280d5b6
+          9dbf3ec6-d58f-4cc9-8449-3057c8df07ad
                   MSBuildSourceProjectFile=C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\PowerAppsToolsTemp_ci.cdsproj
                   MSBuildSourceTargetName=_IsProjectRestoreSupported
                   OriginalItemSpec=C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\PowerAppsToolsTemp_ci.cdsproj
                   ProjectUniqueName=C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\PowerAppsToolsTemp_ci.cdsproj
                   Type=RestoreSpec
-          898f9391-defe-4260-af6f-d3e8335e5593
+          ce9a62c1-e60b-409f-af66-73b45f36aca6
                   ConfigFilePaths=C:\Users\Connor\AppData\Roaming\NuGet\NuGet.Config;C:\Program Files (x86)\NuGet\Config\Microsoft.VisualStudio.Offline.config
                   CrossTargeting=
                   FallbackFolders=
@@ -2132,7 +2132,7 @@ _GenerateRestoreGraph:
                   Version=1.0.0.0
                   WarningsAsErrors=
                   _CentralPackageVersionsEnabled=
-          8e0856ab-9bbe-485a-8aba-b5e77b60af3e
+          4f356c45-be1d-4a11-9665-1f493059eac5
                   MSBuildSourceProjectFile=C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\PowerAppsToolsTemp_ci.cdsproj
                   MSBuildSourceTargetName=_IsProjectRestoreSupported
                   OriginalItemSpec=C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\PowerAppsToolsTemp_ci.cdsproj
@@ -2141,7 +2141,7 @@ _GenerateRestoreGraph:
                   ProjectUniqueName=C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\PowerAppsToolsTemp_ci.cdsproj
                   TargetFrameworks=net462
                   Type=ProjectReference
-          71460e84-df66-4e77-a546-3ff191b7af4a
+          d42d4254-e815-4d53-9092-64591672dfa7
                   Id=Microsoft.PowerApps.MSBuild.Solution
                   MSBuildSourceProjectFile=C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\PowerAppsToolsTemp_ci.cdsproj
                   MSBuildSourceTargetName=_IsProjectRestoreSupported
@@ -2150,7 +2150,7 @@ _GenerateRestoreGraph:
                   TargetFrameworks=net462
                   Type=Dependency
                   VersionRange=1.*
-          122ead9d-0bb3-40e3-9056-e1f4109108af
+          c68560ca-e2e2-44c6-b97e-b49118e62f1d
                   Id=Microsoft.NETFramework.ReferenceAssemblies
                   MSBuildSourceProjectFile=C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\PowerAppsToolsTemp_ci.cdsproj
                   MSBuildSourceTargetName=_IsProjectRestoreSupported
@@ -2160,7 +2160,7 @@ _GenerateRestoreGraph:
                   TargetFrameworks=net462
                   Type=Dependency
                   VersionRange=1.0.0
-          6a372900-f184-4991-a030-bbd5d1648d51
+          61ba556f-e08f-4c59-8760-46842b7ca1a3
                   AssetTargetFallback=
                   MSBuildSourceProjectFile=C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\PowerAppsToolsTemp_ci.cdsproj
                   MSBuildSourceTargetName=_IsProjectRestoreSupported
@@ -2184,17 +2184,17 @@ Target "Restore" in file "C:\Program Files (x86)\Microsoft Visual Studio\2019\Co
 Task "RemoveDuplicates"
   Output Item(s): 
       _RestoreGraphEntryFiltered=
-          319d0498-fcf0-4d18-ac67-7931f42ee13b
-          4f6480e4-c6c5-4720-a4e8-93fa7280d5b6
-          38cc5bc2-9af4-4d28-ad33-8c5715bfad25
-          2e6b6ee8-628c-4b2a-b2d9-a8bfa57b9776
-          575244c5-5ab1-45ec-9cf5-559f59a0719d
-          de37ddda-f511-4131-b5b0-3e06f1ed0353
-          898f9391-defe-4260-af6f-d3e8335e5593
-          8e0856ab-9bbe-485a-8aba-b5e77b60af3e
-          71460e84-df66-4e77-a546-3ff191b7af4a
-          122ead9d-0bb3-40e3-9056-e1f4109108af
-          6a372900-f184-4991-a030-bbd5d1648d51
+          fdce8085-6e45-489c-af59-9ceefd5a5bd5
+          9dbf3ec6-d58f-4cc9-8449-3057c8df07ad
+          2e559d55-753f-4c40-8342-23fa20cbcc82
+          cdccc011-8fd4-4597-8ab9-9fc41eb1b2af
+          5e3f5606-0fd9-469a-96cf-58115555d5fe
+          b1470df9-e547-4b03-b63f-6d185c32779b
+          ce9a62c1-e60b-409f-af66-73b45f36aca6
+          4f356c45-be1d-4a11-9665-1f493059eac5
+          d42d4254-e815-4d53-9092-64591672dfa7
+          c68560ca-e2e2-44c6-b97e-b49118e62f1d
+          61ba556f-e08f-4c59-8760-46842b7ca1a3
 Done executing task "RemoveDuplicates".
 Using "RestoreTask" task from assembly "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\NuGet\NuGet.Build.Tasks.dll".
 Task "RestoreTask"
@@ -2202,19 +2202,19 @@ Task "RestoreTask"
   Task Parameter:HideWarningsAndErrors=False
   Task Parameter:
       RestoreGraphItems=
-          319d0498-fcf0-4d18-ac67-7931f42ee13b
+          fdce8085-6e45-489c-af59-9ceefd5a5bd5
                   MSBuildSourceProjectFile=C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\PowerAppsToolsTemp_ci.cdsproj
                   MSBuildSourceTargetName=_IsProjectRestoreSupported
                   OriginalItemSpec=C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\MUI Canvas App Controls.pcfproj
                   ProjectUniqueName=C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\MUI Canvas App Controls.pcfproj
                   Type=RestoreSpec
-          4f6480e4-c6c5-4720-a4e8-93fa7280d5b6
+          9dbf3ec6-d58f-4cc9-8449-3057c8df07ad
                   MSBuildSourceProjectFile=C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\PowerAppsToolsTemp_ci.cdsproj
                   MSBuildSourceTargetName=_IsProjectRestoreSupported
                   OriginalItemSpec=C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\PowerAppsToolsTemp_ci.cdsproj
                   ProjectUniqueName=C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\PowerAppsToolsTemp_ci.cdsproj
                   Type=RestoreSpec
-          38cc5bc2-9af4-4d28-ad33-8c5715bfad25
+          2e559d55-753f-4c40-8342-23fa20cbcc82
                   ConfigFilePaths=C:\Users\Connor\AppData\Roaming\NuGet\NuGet.Config;C:\Program Files (x86)\NuGet\Config\Microsoft.VisualStudio.Offline.config
                   CrossTargeting=
                   FallbackFolders=
@@ -2242,7 +2242,7 @@ Task "RestoreTask"
                   Version=1.0.0.0
                   WarningsAsErrors=
                   _CentralPackageVersionsEnabled=
-          2e6b6ee8-628c-4b2a-b2d9-a8bfa57b9776
+          cdccc011-8fd4-4597-8ab9-9fc41eb1b2af
                   Id=Microsoft.PowerApps.MSBuild.Pcf
                   MSBuildSourceProjectFile=C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\PowerAppsToolsTemp_ci.cdsproj
                   MSBuildSourceTargetName=_IsProjectRestoreSupported
@@ -2251,7 +2251,7 @@ Task "RestoreTask"
                   TargetFrameworks=net462
                   Type=Dependency
                   VersionRange=1.*
-          575244c5-5ab1-45ec-9cf5-559f59a0719d
+          5e3f5606-0fd9-469a-96cf-58115555d5fe
                   Id=Microsoft.NETFramework.ReferenceAssemblies
                   MSBuildSourceProjectFile=C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\PowerAppsToolsTemp_ci.cdsproj
                   MSBuildSourceTargetName=_IsProjectRestoreSupported
@@ -2261,7 +2261,7 @@ Task "RestoreTask"
                   TargetFrameworks=net462
                   Type=Dependency
                   VersionRange=1.0.0
-          de37ddda-f511-4131-b5b0-3e06f1ed0353
+          b1470df9-e547-4b03-b63f-6d185c32779b
                   AssetTargetFallback=
                   MSBuildSourceProjectFile=C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\PowerAppsToolsTemp_ci.cdsproj
                   MSBuildSourceTargetName=_IsProjectRestoreSupported
@@ -2279,7 +2279,7 @@ Task "RestoreTask"
                   TargetPlatformMoniker=Windows,Version=7.0
                   TargetPlatformVersion=7.0
                   Type=TargetFrameworkInformation
-          898f9391-defe-4260-af6f-d3e8335e5593
+          ce9a62c1-e60b-409f-af66-73b45f36aca6
                   ConfigFilePaths=C:\Users\Connor\AppData\Roaming\NuGet\NuGet.Config;C:\Program Files (x86)\NuGet\Config\Microsoft.VisualStudio.Offline.config
                   CrossTargeting=
                   FallbackFolders=
@@ -2307,7 +2307,7 @@ Task "RestoreTask"
                   Version=1.0.0.0
                   WarningsAsErrors=
                   _CentralPackageVersionsEnabled=
-          8e0856ab-9bbe-485a-8aba-b5e77b60af3e
+          4f356c45-be1d-4a11-9665-1f493059eac5
                   MSBuildSourceProjectFile=C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\PowerAppsToolsTemp_ci.cdsproj
                   MSBuildSourceTargetName=_IsProjectRestoreSupported
                   OriginalItemSpec=C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\PowerAppsToolsTemp_ci.cdsproj
@@ -2316,7 +2316,7 @@ Task "RestoreTask"
                   ProjectUniqueName=C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\PowerAppsToolsTemp_ci.cdsproj
                   TargetFrameworks=net462
                   Type=ProjectReference
-          71460e84-df66-4e77-a546-3ff191b7af4a
+          d42d4254-e815-4d53-9092-64591672dfa7
                   Id=Microsoft.PowerApps.MSBuild.Solution
                   MSBuildSourceProjectFile=C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\PowerAppsToolsTemp_ci.cdsproj
                   MSBuildSourceTargetName=_IsProjectRestoreSupported
@@ -2325,7 +2325,7 @@ Task "RestoreTask"
                   TargetFrameworks=net462
                   Type=Dependency
                   VersionRange=1.*
-          122ead9d-0bb3-40e3-9056-e1f4109108af
+          c68560ca-e2e2-44c6-b97e-b49118e62f1d
                   Id=Microsoft.NETFramework.ReferenceAssemblies
                   MSBuildSourceProjectFile=C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\PowerAppsToolsTemp_ci.cdsproj
                   MSBuildSourceTargetName=_IsProjectRestoreSupported
@@ -2335,7 +2335,7 @@ Task "RestoreTask"
                   TargetFrameworks=net462
                   Type=Dependency
                   VersionRange=1.0.0
-          6a372900-f184-4991-a030-bbd5d1648d51
+          61ba556f-e08f-4c59-8760-46842b7ca1a3
                   AssetTargetFallback=
                   MSBuildSourceProjectFile=C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\PowerAppsToolsTemp_ci.cdsproj
                   MSBuildSourceTargetName=_IsProjectRestoreSupported
@@ -2363,15 +2363,15 @@ Task "RestoreTask"
   (in) RestoreForceEvaluate 'False'
   (in) RestorePackagesConfig 'False'
   Running restore with 24 concurrent jobs.
-  Reading project file C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\MUI Canvas App Controls.pcfproj.
   Reading project file C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\PowerAppsToolsTemp_ci.cdsproj.
+  Reading project file C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\MUI Canvas App Controls.pcfproj.
   Restoring packages for C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\PowerAppsToolsTemp_ci.cdsproj...
   Restoring packages for .NETFramework,Version=v4.6.2...
   The restore inputs for 'MUI Canvas App Controls' have not changed. No further actions are required to complete the restore.
   Committing restore...
   Assets file has not changed. Skipping assets file writing. Path: C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\project.assets.json
   No-Op restore. The cache will not be updated. Path: C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\project.nuget.cache
-  Restored C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\MUI Canvas App Controls.pcfproj (in 49 ms).
+  Restored C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\MUI Canvas App Controls.pcfproj (in 47 ms).
     CACHE https://api.nuget.org/v3-flatcontainer/microsoft.powerapps.msbuild.solution/index.json
     CACHE https://api.nuget.org/v3-flatcontainer/microsoft.powerapps.msbuild.pcf/index.json
   Resolving conflicts for .NETFramework,Version=v4.6.2...
@@ -2420,7 +2420,7 @@ Task "RestoreTask"
   Writing assets file to disk. Path: C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\obj\project.assets.json
   Writing cache file to disk. Path: C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\obj\project.nuget.cache
   Persisting dg to C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\obj\PowerAppsToolsTemp_ci.cdsproj.nuget.dgspec.json
-  Restored C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\PowerAppsToolsTemp_ci.cdsproj (in 382 ms).
+  Restored C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\PowerAppsToolsTemp_ci.cdsproj (in 373 ms).
   
   NuGet Config files used:
       C:\Users\Connor\AppData\Roaming\NuGet\NuGet.Config
@@ -2842,13 +2842,13 @@ Task "PpbtTelemetryInitializeSession"
   Task Parameter:PpbtTelemetryRecorderUseDotnet=False
   Task Parameter:PpbtTelemetryRecorderDirectory=C:\Users\Connor\.nuget\packages\microsoft.powerapps.msbuild.solution\1.31.2\tasks\net472\ppbtTelemetryRecorder
   Task Parameter:PpbtTelemetryRecorderWaitToExit=False
-  PpbtTelemetryInitializeSession: Initialized the telemetry sessionId to 0c613f08-9155-495c-a295-2cf9a6145b81.
+  PpbtTelemetryInitializeSession: Initialized the telemetry sessionId to ed66b6d6-1457-4e9b-8870-a2fabadf81ae.
   TelemetrySessionService: Calling telemetry recorder with process info: 
     WD: C:\Users\Connor\.nuget\packages\microsoft.powerapps.msbuild.solution\1.31.2\tasks\net472\ppbtTelemetryRecorder
     FileName: ppbtTelemetryRecorder.exe
     PreLoad
-  PpbtTelemetryInitializeSession: Initialized the telemetry service for Power Platform Build Tools (sessionId: `0c613f08-9155-495c-a295-2cf9a6145b81`, key: `ppbt.TelemetrySessionService--C:\Users\Connor\.nuget\packages\microsoft.powerapps.msbuild.solution\1.31.2\tasks\net472`).
-  Output Property: PpbtTelemetrySessionId=0c613f08-9155-495c-a295-2cf9a6145b81
+  PpbtTelemetryInitializeSession: Initialized the telemetry service for Power Platform Build Tools (sessionId: `ed66b6d6-1457-4e9b-8870-a2fabadf81ae`, key: `ppbt.TelemetrySessionService--C:\Users\Connor\.nuget\packages\microsoft.powerapps.msbuild.solution\1.31.2\tasks\net472`).
+  Output Property: PpbtTelemetrySessionId=ed66b6d6-1457-4e9b-8870-a2fabadf81ae
 Done executing task "PpbtTelemetryInitializeSession".
 Done building target "_PpbtTelemetryInitializeSession" in project "PowerAppsToolsTemp_ci.cdsproj".
 Target "_GetProjectJsonPath" in file "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\NuGet\NuGet.targets" from project "C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\PowerAppsToolsTemp_ci.cdsproj" (target "_GetRestoreProjectStyle" depends on it):
@@ -3429,9 +3429,9 @@ Task "PpbtTelemetryInitializeSession"
   Task Parameter:PpbtTelemetryRecorderUseDotnet=False
   Task Parameter:PpbtTelemetryRecorderDirectory=C:\Users\Connor\.nuget\packages\microsoft.powerapps.msbuild.pcf\1.31.2\tasks\net472\ppbtTelemetryRecorder
   Task Parameter:PpbtTelemetryRecorderWaitToExit=False
-  PpbtTelemetryInitializeSession: Reusing telemetry sessionId 0c613f08-9155-495c-a295-2cf9a6145b81 from build.
-  PpbtTelemetryInitializeSession: Telemetry service has already been initialized. (sessionId: `0c613f08-9155-495c-a295-2cf9a6145b81`, key: `ppbt.TelemetrySessionService--C:\Users\Connor\.nuget\packages\microsoft.powerapps.msbuild.solution\1.31.2\tasks\net472`).
-  Output Property: PpbtTelemetrySessionId=0c613f08-9155-495c-a295-2cf9a6145b81
+  PpbtTelemetryInitializeSession: Reusing telemetry sessionId ed66b6d6-1457-4e9b-8870-a2fabadf81ae from build.
+  PpbtTelemetryInitializeSession: Telemetry service has already been initialized. (sessionId: `ed66b6d6-1457-4e9b-8870-a2fabadf81ae`, key: `ppbt.TelemetrySessionService--C:\Users\Connor\.nuget\packages\microsoft.powerapps.msbuild.solution\1.31.2\tasks\net472`).
+  Output Property: PpbtTelemetrySessionId=ed66b6d6-1457-4e9b-8870-a2fabadf81ae
 Done executing task "PpbtTelemetryInitializeSession".
 Done building target "_PpbtTelemetryInitializeSession" in project "MUI Canvas App Controls.pcfproj".
 Target "GetTargetFrameworksWithPlatformForSingleTargetFramework" in file "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\MUI Canvas App Controls.pcfproj" (target "GetTargetFrameworks" depends on it):
@@ -3800,8 +3800,8 @@ Task "PpbtTelemetryStartBuildPhase"
   TelemetrySessionService: Calling telemetry recorder with process info: 
     WD: C:\Users\Connor\.nuget\packages\microsoft.powerapps.msbuild.solution\1.31.2\tasks\net472\ppbtTelemetryRecorder
     FileName: ppbtTelemetryRecorder.exe
-    TrackEvent 2024-04-27T00:16:04.0391037+00:00 pcf 0c613f08-9155-495c-a295-2cf9a6145b81 StartBuildPhase {\"buildPhase\":\"npm-clean\",\"Success\":\"true\"} null
-  Output Property: _PcfNpmCleanStartTimeTicks=638497737640361032
+    TrackEvent 2024-05-06T18:59:32.6235530+00:00 pcf ed66b6d6-1457-4e9b-8870-a2fabadf81ae StartBuildPhase {\"buildPhase\":\"npm-clean\",\"Success\":\"true\"} null
+  Output Property: _PcfNpmCleanStartTimeTicks=638506187726197658
 Done executing task "PpbtTelemetryStartBuildPhase".
 Using "Exec" task from assembly "Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
 Task "Exec"
@@ -3812,19 +3812,19 @@ Task "Exec"
   > pcf-project@1.0.0 clean
   > pcf-scripts clean --noColor --buildMode development --outDir C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\out\controls --buildSource MSBuild
   
-  [8:16:05 PM] [clean]  Initializing...
-  [8:16:05 PM] [clean]  Cleaning build outputs...
-  [8:16:05 PM] [clean]  Succeeded
+  [2:59:33 PM] [clean]  Initializing...
+  [2:59:34 PM] [clean]  Cleaning build outputs...
+  [2:59:34 PM] [clean]  Succeeded
 Done executing task "Exec".
 Using "PpbtTelemetryEndBuildPhase" task from assembly "C:\Users\Connor\.nuget\packages\microsoft.powerapps.msbuild.pcf\1.31.2\tasks\net472\Microsoft.PowerPlatform.MSBuild.Telemetry.Tasks.dll".
 Task "PpbtTelemetryEndBuildPhase"
-  Task Parameter:BuildPhaseStartTimeTicks=638497737640361032
+  Task Parameter:BuildPhaseStartTimeTicks=638506187726197658
   Task Parameter:ProjectType=pcf
   Task Parameter:BuildPhase=npm-clean
   TelemetrySessionService: Calling telemetry recorder with process info: 
     WD: C:\Users\Connor\.nuget\packages\microsoft.powerapps.msbuild.solution\1.31.2\tasks\net472\ppbtTelemetryRecorder
     FileName: ppbtTelemetryRecorder.exe
-    TrackEvent 2024-04-27T00:16:07.9912540+00:00 pcf 0c613f08-9155-495c-a295-2cf9a6145b81 EndBuildPhase {\"buildPhase\":\"npm-clean\"} "{\"Execution Time(ms)\":3955.0}"
+    TrackEvent 2024-05-06T18:59:36.4972149+00:00 pcf ed66b6d6-1457-4e9b-8870-a2fabadf81ae EndBuildPhase {\"buildPhase\":\"npm-clean\"} "{\"Execution Time(ms)\":3877.0}"
 Done executing task "PpbtTelemetryEndBuildPhase".
 Done building target "PcfClean" in project "MUI Canvas App Controls.pcfproj".
 Target "EntityClean" skipped, due to false condition; ('@(EntityDeploy)' != '') was evaluated as ('' != '').
@@ -3846,8 +3846,8 @@ Task "PpbtTelemetryStartBuildPhase"
   TelemetrySessionService: Calling telemetry recorder with process info: 
     WD: C:\Users\Connor\.nuget\packages\microsoft.powerapps.msbuild.solution\1.31.2\tasks\net472\ppbtTelemetryRecorder
     FileName: ppbtTelemetryRecorder.exe
-    TrackEvent 2024-04-27T00:16:08.0072220+00:00 solution 0c613f08-9155-495c-a295-2cf9a6145b81 StartBuildPhase {\"buildPhase\":\"clean\",\"Success\":\"true\"} null
-  Output Property: _SolutionCleanStartTimeTicks=638497737680072220
+    TrackEvent 2024-05-06T18:59:36.5156613+00:00 solution ed66b6d6-1457-4e9b-8870-a2fabadf81ae StartBuildPhase {\"buildPhase\":\"clean\",\"Success\":\"true\"} null
+  Output Property: _SolutionCleanStartTimeTicks=638506187765156613
 Done executing task "PpbtTelemetryStartBuildPhase".
 Task "Message"
   Task Parameter:Importance=High
@@ -3882,13 +3882,13 @@ Task "Delete"
 Done executing task "Delete".
 Using "PpbtTelemetryEndBuildPhase" task from assembly "C:\Users\Connor\.nuget\packages\microsoft.powerapps.msbuild.solution\1.31.2\tasks\net472\Microsoft.PowerPlatform.MSBuild.Telemetry.Tasks.dll".
 Task "PpbtTelemetryEndBuildPhase"
-  Task Parameter:BuildPhaseStartTimeTicks=638497737680072220
+  Task Parameter:BuildPhaseStartTimeTicks=638506187765156613
   Task Parameter:ProjectType=solution
   Task Parameter:BuildPhase=clean
   TelemetrySessionService: Calling telemetry recorder with process info: 
     WD: C:\Users\Connor\.nuget\packages\microsoft.powerapps.msbuild.solution\1.31.2\tasks\net472\ppbtTelemetryRecorder
     FileName: ppbtTelemetryRecorder.exe
-    TrackEvent 2024-04-27T00:16:08.0235669+00:00 solution 0c613f08-9155-495c-a295-2cf9a6145b81 EndBuildPhase {\"buildPhase\":\"clean\"} "{\"Execution Time(ms)\":16.0}"
+    TrackEvent 2024-05-06T18:59:36.5342579+00:00 solution ed66b6d6-1457-4e9b-8870-a2fabadf81ae EndBuildPhase {\"buildPhase\":\"clean\"} "{\"Execution Time(ms)\":18.0}"
 Done executing task "PpbtTelemetryEndBuildPhase".
 Done building target "AfterClean" in project "PowerAppsToolsTemp_ci.cdsproj".
 Target "EntityClean" skipped, due to false condition; ('@(EntityDeploy)' != '') was evaluated as ('' != '').
@@ -3902,8 +3902,8 @@ Task "PpbtTelemetryStartBuildPhase"
   TelemetrySessionService: Calling telemetry recorder with process info: 
     WD: C:\Users\Connor\.nuget\packages\microsoft.powerapps.msbuild.solution\1.31.2\tasks\net472\ppbtTelemetryRecorder
     FileName: ppbtTelemetryRecorder.exe
-    TrackEvent 2024-04-27T00:16:08.0446317+00:00 solution 0c613f08-9155-495c-a295-2cf9a6145b81 StartBuildPhase {\"buildPhase\":\"build\",\"Success\":\"true\"} null
-  Output Property: _SolutionBuildStartTimeTicks=638497737680446317
+    TrackEvent 2024-05-06T18:59:36.5516167+00:00 solution ed66b6d6-1457-4e9b-8870-a2fabadf81ae StartBuildPhase {\"buildPhase\":\"build\",\"Success\":\"true\"} null
+  Output Property: _SolutionBuildStartTimeTicks=638506187765516167
 Done executing task "PpbtTelemetryStartBuildPhase".
 Done building target "StartTelemetryTask" in project "PowerAppsToolsTemp_ci.cdsproj".
 Target "BeforeBuild" in file "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\PowerAppsToolsTemp_ci.cdsproj" (target "Build" depends on it):
@@ -33158,8 +33158,8 @@ Task "PpbtTelemetryStartBuildPhase"
   TelemetrySessionService: Calling telemetry recorder with process info: 
     WD: C:\Users\Connor\.nuget\packages\microsoft.powerapps.msbuild.solution\1.31.2\tasks\net472\ppbtTelemetryRecorder
     FileName: ppbtTelemetryRecorder.exe
-    TrackEvent 2024-04-27T00:16:09.1830181+00:00 pcf 0c613f08-9155-495c-a295-2cf9a6145b81 StartBuildPhase {\"buildPhase\":\"npm-build\",\"Success\":\"true\"} null
-  Output Property: _PcfNpmBuildStartTimeTicks=638497737691830181
+    TrackEvent 2024-05-06T18:59:37.6955626+00:00 pcf ed66b6d6-1457-4e9b-8870-a2fabadf81ae StartBuildPhase {\"buildPhase\":\"npm-build\",\"Success\":\"true\"} null
+  Output Property: _PcfNpmBuildStartTimeTicks=638506187776955626
 Done executing task "PpbtTelemetryStartBuildPhase".
 Task "Exec"
   Task Parameter:CustomErrorRegularExpression=\[pcf-.+\] \[Error\] .*
@@ -33169,43 +33169,43 @@ Task "Exec"
   > pcf-project@1.0.0 build
   > pcf-scripts build --noColor --buildMode development --outDir C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\out\controls --buildSource MSBuild
   
-  [8:16:10 PM] [build]  Initializing...
-  [8:16:10 PM] [build]  Validating manifest...
-  [8:16:10 PM] [build]  Validating control...
-  [8:16:11 PM] [build]  Generating manifest types...
+  [2:59:39 PM] [build]  Initializing...
+  [2:59:39 PM] [build]  Validating manifest...
+  [2:59:39 PM] [build]  Validating control...
+  [2:59:39 PM] [build]  Generating manifest types...
   DeprecationWarning: 'createInterfaceDeclaration' has been deprecated since v4.8.0. Decorators are no longer supported for this function. Callers should switch to an overload that does not accept a 'decorators' parameter.
-  [8:16:11 PM] [build]  Generating design types...
-  [8:16:11 PM] [build]  Running ESLint...
-  [8:16:12 PM] [build]  Compiling and bundling control...
+  [2:59:39 PM] [build]  Generating design types...
+  [2:59:39 PM] [build]  Running ESLint...
+  [2:59:41 PM] [build]  Compiling and bundling control...
   [BABEL] Note: The code generator has deoptimised the styling of C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\node_modules\react-dom\cjs\react-dom.development.js as it exceeds the max of 500KB.
   [Webpack stats]:
   asset bundle.js 713 KiB [emitted] (name: main)
   orphan modules 2.79 MiB [orphan] 876 modules
   runtime modules 1.13 KiB 5 modules
-  built modules 440 KiB [built]
+  built modules 441 KiB [built]
     modules by path ./node_modules/@mui/ 233 KiB 120 modules
     modules by path ./node_modules/@emotion/ 74.9 KiB 15 modules
     modules by path ./node_modules/@babel/runtime/helpers/ 2.66 KiB 8 modules
     modules by path ./node_modules/stylis/src/*.js 25 KiB 7 modules
     modules by path ../utils/*.tsx 1.46 KiB 5 modules
     modules by path ./node_modules/prop-types/ 26.7 KiB 5 modules
-    modules by path ./MUICheckbox/ 7.31 KiB 3 modules
+    modules by path ./MUICheckbox/ 7.56 KiB 3 modules
     modules by path ./node_modules/react-transition-group/esm/ 11.2 KiB 3 modules
     modules by path ./node_modules/react/ 45.1 KiB 2 modules
     modules by path ./node_modules/react-is/ 7.58 KiB 2 modules
     + 4 modules
-  webpack 5.90.3 compiled successfully in 10648 ms
-  [8:16:24 PM] [build]  Generating build outputs...
-  [8:16:24 PM] [build]  Succeeded
+  webpack 5.90.3 compiled successfully in 10199 ms
+  [2:59:52 PM] [build]  Generating build outputs...
+  [2:59:52 PM] [build]  Succeeded
 Done executing task "Exec".
 Task "PpbtTelemetryEndBuildPhase"
-  Task Parameter:BuildPhaseStartTimeTicks=638497737691830181
+  Task Parameter:BuildPhaseStartTimeTicks=638506187776955626
   Task Parameter:ProjectType=pcf
   Task Parameter:BuildPhase=npm-build
   TelemetrySessionService: Calling telemetry recorder with process info: 
     WD: C:\Users\Connor\.nuget\packages\microsoft.powerapps.msbuild.solution\1.31.2\tasks\net472\ppbtTelemetryRecorder
     FileName: ppbtTelemetryRecorder.exe
-    TrackEvent 2024-04-27T00:16:24.9199605+00:00 pcf 0c613f08-9155-495c-a295-2cf9a6145b81 EndBuildPhase {\"buildPhase\":\"npm-build\"} "{\"Execution Time(ms)\":15736.0}"
+    TrackEvent 2024-05-06T18:59:52.9490054+00:00 pcf ed66b6d6-1457-4e9b-8870-a2fabadf81ae EndBuildPhase {\"buildPhase\":\"npm-build\"} "{\"Execution Time(ms)\":15253.0}"
 Done executing task "PpbtTelemetryEndBuildPhase".
 Done building target "PcfBuild" in project "MUI Canvas App Controls.pcfproj".
 Done executing task "CallTarget".
@@ -34308,9 +34308,9 @@ Task "Copy"
   Creating directory "obj\Debug\Metadata\Other".
   Creating directory "obj\Debug\Metadata\Other".
   Creating directory "obj\Debug\Metadata\Other".
-  Copying file from "C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\src\Other\Solution.xml" to "C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\obj\Debug\Metadata\Other\Solution.xml".
   Copying file from "C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\src\Other\Customizations.xml" to "C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\obj\Debug\Metadata\Other\Customizations.xml".
   Copying file from "C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\src\Other\Relationships.xml" to "C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\obj\Debug\Metadata\Other\Relationships.xml".
+  Copying file from "C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\src\Other\Solution.xml" to "C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\obj\Debug\Metadata\Other\Solution.xml".
 Done executing task "Copy".
 Done building target "CopyCdsSolutionContent" in project "PowerAppsToolsTemp_ci.cdsproj".
 Target "ProcessCdsProjectReferencesOutputs" in file "C:\Users\Connor\.nuget\packages\microsoft.powerapps.msbuild.solution\1.31.2\build\Microsoft.PowerApps.MSBuild.Solution.targets" from project "C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\PowerAppsToolsTemp_ci.cdsproj" (target "PowerAppsPackage" depends on it):
@@ -34417,7 +34417,7 @@ Task "PpbtTelemetryTrackEvent"
   TelemetrySessionService: Calling telemetry recorder with process info: 
     WD: C:\Users\Connor\.nuget\packages\microsoft.powerapps.msbuild.solution\1.31.2\tasks\net472\ppbtTelemetryRecorder
     FileName: ppbtTelemetryRecorder.exe
-    TrackEvent 2024-04-27T00:16:25.6173764+00:00 solution 0c613f08-9155-495c-a295-2cf9a6145b81 target-PowerAppsPackage {\"SolutionPackageType\":\"Unmanaged\",\"SolutionPackageLocalTemplate\":\"null\",\"SolutionPackageEnableLocalization\":\"false\"} null
+    TrackEvent 2024-05-06T18:59:53.6352858+00:00 solution ed66b6d6-1457-4e9b-8870-a2fabadf81ae target-PowerAppsPackage {\"SolutionPackageType\":\"Unmanaged\",\"SolutionPackageLocalTemplate\":\"null\",\"SolutionPackageEnableLocalization\":\"false\"} null
 Done executing task "PpbtTelemetryTrackEvent".
 Done building target "PowerAppsPackage" in project "PowerAppsToolsTemp_ci.cdsproj".
 Target "CleanUpIntermediateFiles" in file "C:\Users\Connor\.nuget\packages\microsoft.powerapps.msbuild.solution\1.31.2\build\Microsoft.PowerApps.MSBuild.Solution.targets" from project "C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\PowerAppsToolsTemp_ci.cdsproj" (target "Build" depends on it):
@@ -34434,13 +34434,13 @@ Done executing task "Message".
 Done building target "CleanUpIntermediateFiles" in project "PowerAppsToolsTemp_ci.cdsproj".
 Target "EndTelemetryTask" in file "C:\Users\Connor\.nuget\packages\microsoft.powerapps.msbuild.solution\1.31.2\build\Microsoft.PowerApps.MSBuild.Solution.targets" from project "C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\PowerAppsToolsTemp_ci.cdsproj" (target "Build" depends on it):
 Task "PpbtTelemetryEndBuildPhase"
-  Task Parameter:BuildPhaseStartTimeTicks=638497737680446317
+  Task Parameter:BuildPhaseStartTimeTicks=638506187765516167
   Task Parameter:ProjectType=solution
   Task Parameter:BuildPhase=build
   TelemetrySessionService: Calling telemetry recorder with process info: 
     WD: C:\Users\Connor\.nuget\packages\microsoft.powerapps.msbuild.solution\1.31.2\tasks\net472\ppbtTelemetryRecorder
     FileName: ppbtTelemetryRecorder.exe
-    TrackEvent 2024-04-27T00:16:25.6412225+00:00 solution 0c613f08-9155-495c-a295-2cf9a6145b81 EndBuildPhase {\"buildPhase\":\"build\"} "{\"Execution Time(ms)\":17596.0}"
+    TrackEvent 2024-05-06T18:59:53.6561489+00:00 solution ed66b6d6-1457-4e9b-8870-a2fabadf81ae EndBuildPhase {\"buildPhase\":\"build\"} "{\"Execution Time(ms)\":17104.0}"
 Done executing task "PpbtTelemetryEndBuildPhase".
 Done building target "EndTelemetryTask" in project "PowerAppsToolsTemp_ci.cdsproj".
 Target "Build" in file "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\PowerAppsToolsTemp_ci.cdsproj" (target "Rebuild" depends on it):
@@ -34460,33 +34460,34 @@ Detailed Build Summary
   ============================== Build Hierarchy (IDs represent configurations) =====================================================
   Id                  : Exclusive Time   Total Time   Path (Targets)
   -----------------------------------------------------------------------------------------------------------------------------------
-  0                   : 0.684s           4.429s       C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\PowerAppsToolsTemp_ci.cdsproj (Restore) 
+  0                   : 0.668s           4.445s       C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\PowerAppsToolsTemp_ci.cdsproj (Restore) 
   | 1                 : 0.016s           0.016s       C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\PowerAppsToolsTemp_ci.cdsproj (_IsProjectRestoreSupported) 
-  | 2                 : 0.006s           3.239s       C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\PowerAppsToolsTemp_ci.cdsproj (_GenerateRestoreProjectPathWalk) 
-  | . 3               : 3.234s           3.234s       C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\MUI Canvas App Controls.pcfproj (_GenerateRestoreProjectPathWalk) 
-  | 4                 : 0.134s           0.134s       C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\MUI Canvas App Controls.pcfproj (_IsProjectRestoreSupported) 
-  | 5                 : 0.187s           0.187s       C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\MUI Canvas App Controls.pcfproj (_GenerateRestoreGraphProjectEntry) 
+  | 2                 : 0.005s           3.282s       C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\PowerAppsToolsTemp_ci.cdsproj (_GenerateRestoreProjectPathWalk) 
+  | . 3               : 3.277s           3.277s       C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\MUI Canvas App Controls.pcfproj (_GenerateRestoreProjectPathWalk) 
+  | 4                 : 0.130s           0.130s       C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\MUI Canvas App Controls.pcfproj (_IsProjectRestoreSupported) 
+  | 5                 : 0.186s           0.186s       C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\MUI Canvas App Controls.pcfproj (_GenerateRestoreGraphProjectEntry) 
   | 6                 : 0.007s           0.007s       C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\PowerAppsToolsTemp_ci.cdsproj (_GenerateRestoreGraphProjectEntry) 
-  | 7                 : 0.155s           0.155s       C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\MUI Canvas App Controls.pcfproj (_GenerateProjectRestoreGraph) 
-  . 8                 : 0.007s           0.007s       C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\PowerAppsToolsTemp_ci.cdsproj (_GenerateProjectRestoreGraph) 
+  | 7                 : 0.150s           0.150s       C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\MUI Canvas App Controls.pcfproj (_GenerateProjectRestoreGraph) 
+  . 8                 : 0.005s           0.005s       C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\PowerAppsToolsTemp_ci.cdsproj (_GenerateProjectRestoreGraph) 
   
   ============================== Node Utilization (IDs represent configurations) ====================================================
   Timestamp:            1        Duration   Cumulative
   -----------------------------------------------------------------------------------------------------------------------------------
-  638497737559223968:   0        0.116s     0.116s ..
-  638497737560381735:   1        0.016s     0.132s 
-  638497737560544096:   0        0.015s     0.147s 
-  638497737560689373:   2        0.005s     0.152s 
-  638497737560739567:   3        3.234s     3.385s ................................................................
-  638497737593077477:   2        0.002s     3.387s 
-  638497737593092536:   0        0.001s     3.388s 
-  638497737593102572:   4        0.134s     3.522s ..
-  638497737594443716:   0        0.003s     3.525s 
-  638497737594473729:   5        0.187s     3.712s ...
-  638497737596343469:   6        0.007s     3.718s 
-  638497737596408536:   7        0.155s     3.874s ...
-  638497737597959041:   8        0.007s     3.880s 
-  638497737598024513:   0        0.549s     4.429s ..........
+  638506187643374882:   0        0.116s     0.116s ..
+  638506187644535621:   1        0.016s     0.132s 
+  638506187644697129:   0        0.015s     0.147s 
+  638506187644846063:   2        0.004s     0.151s 
+  638506187644886088:   3        3.277s     3.428s .................................................................
+  638506187677655651:   2        0.001s     3.429s 
+  638506187677667527:   0        0.001s     3.430s 
+  638506187677677518:   4        0.130s     3.560s ..
+  638506187678974786:   0        0.002s     3.562s 
+  638506187678994793:   5        0.186s     3.748s ...
+  638506187680853496:   6        0.007s     3.755s 
+  638506187680923660:   0        0.001s     3.756s 
+  638506187680933673:   7        0.150s     3.906s ...
+  638506187682437948:   8        0.005s     3.911s 
+  638506187682487959:   0        0.533s     4.445s ..........
   -----------------------------------------------------------------------------------------------------------------------------------
   Utilization:          100.0    Average Utilization: 100.0
   
@@ -34497,41 +34498,42 @@ Detailed Build Summary
   ============================== Build Hierarchy (IDs represent configurations) =====================================================
   Id                  : Exclusive Time   Total Time   Path (Targets)
   -----------------------------------------------------------------------------------------------------------------------------------
-  9                   : 0.451s           25.307s       C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\PowerAppsToolsTemp_ci.cdsproj (rebuild) 
-  | 10                : 3.364s           3.364s       C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\MUI Canvas App Controls.pcfproj (GetTargetFrameworks) 
-  | 11                : 4.118s           4.118s       C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\MUI Canvas App Controls.pcfproj (Clean) 
-  | 12                : 16.848s           16.848s       C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\MUI Canvas App Controls.pcfproj () 
-  | 13                : 0.270s           0.270s       C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\MUI Canvas App Controls.pcfproj (GetNativeManifest) 
-  . 14                : 0.255s           0.255s       C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\MUI Canvas App Controls.pcfproj (GetProjectOutputPath) 
+  9                   : 0.437s           24.897s       C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\PowerAppsToolsTemp_ci\PowerAppsToolsTemp_ci.cdsproj (rebuild) 
+  | 10                : 3.519s           3.519s       C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\MUI Canvas App Controls.pcfproj (GetTargetFrameworks) 
+  | 11                : 4.042s           4.042s       C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\MUI Canvas App Controls.pcfproj (Clean) 
+  | 12                : 16.381s           16.381s       C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\MUI Canvas App Controls.pcfproj () 
+  | 13                : 0.266s           0.266s       C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\MUI Canvas App Controls.pcfproj (GetNativeManifest) 
+  . 14                : 0.253s           0.253s       C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\MUI Canvas App Controls.pcfproj (GetProjectOutputPath) 
   
   ============================== Node Utilization (IDs represent configurations) ====================================================
   Timestamp:            1        Duration   Cumulative
   -----------------------------------------------------------------------------------------------------------------------------------
-  638497737559223968:   0        0.116s     0.116s ..
-  638497737560381735:   1        0.016s     0.132s 
-  638497737560544096:   0        0.015s     0.147s 
-  638497737560689373:   2        0.005s     0.152s 
-  638497737560739567:   3        3.234s     3.385s ................................................................
-  638497737593077477:   2        0.002s     3.387s 
-  638497737593092536:   0        0.001s     3.388s 
-  638497737593102572:   4        0.134s     3.522s ..
-  638497737594443716:   0        0.003s     3.525s 
-  638497737594473729:   5        0.187s     3.712s ...
-  638497737596343469:   6        0.007s     3.718s 
-  638497737596408536:   7        0.155s     3.874s ...
-  638497737597959041:   8        0.007s     3.880s 
-  638497737598024513:   0        0.549s     4.429s ..........
-  638497737603566410:   9        0.160s     4.594s ...
-  638497737605166855:   10       3.364s     7.959s ...................................................................
-  638497737638810450:   9        0.007s     7.966s 
-  638497737638883619:   11       4.118s     12.084s ..................................................................................
-  638497737680062213:   9        0.084s     12.168s .
-  638497737680902669:   12       16.848s     29.016s +++ (scale 1:100)
-  638497737849382426:   9        0.001s     29.017s 
-  638497737849392439:   13       0.270s     29.287s .....
-  638497737852092753:   9        0.050s     29.337s .
-  638497737852593510:   14       0.255s     29.592s .....
-  638497737855144711:   9        0.149s     29.741s ..
+  638506187643374882:   0        0.116s     0.116s ..
+  638506187644535621:   1        0.016s     0.132s 
+  638506187644697129:   0        0.015s     0.147s 
+  638506187644846063:   2        0.004s     0.151s 
+  638506187644886088:   3        3.277s     3.428s .................................................................
+  638506187677655651:   2        0.001s     3.429s 
+  638506187677667527:   0        0.001s     3.430s 
+  638506187677677518:   4        0.130s     3.560s ..
+  638506187678974786:   0        0.002s     3.562s 
+  638506187678994793:   5        0.186s     3.748s ...
+  638506187680853496:   6        0.007s     3.755s 
+  638506187680923660:   0        0.001s     3.756s 
+  638506187680933673:   7        0.150s     3.906s ...
+  638506187682437948:   8        0.005s     3.911s 
+  638506187682487959:   0        0.533s     4.445s ..........
+  638506187687881756:   9        0.158s     4.609s ...
+  638506187689463497:   10       3.518s     8.127s ......................................................................
+  638506187724642701:   9        0.008s     8.135s 
+  638506187724722860:   11       4.042s     12.177s ................................................................................
+  638506187765143012:   9        0.071s     12.248s .
+  638506187765853441:   12       16.381s     28.628s +++ (scale 1:100)
+  638506187929658484:   9        0.002s     28.630s 
+  638506187929673519:   13       0.266s     28.896s .....
+  638506187932333567:   9        0.052s     28.947s .
+  638506187932849360:   14       0.253s     29.200s .....
+  638506187935379077:   9        0.148s     29.348s ..
   -----------------------------------------------------------------------------------------------------------------------------------
   Utilization:          100.0    Average Utilization: 100.0
 
@@ -34539,4 +34541,4 @@ Build succeeded.
     0 Warning(s)
     0 Error(s)
 
-Time Elapsed 00:00:29.75
+Time Elapsed 00:00:29.35

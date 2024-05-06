@@ -28,7 +28,7 @@ export class MUICheckbox implements ComponentFramework.ReactControl<IInputs, IOu
     handleAutoSizing(height: number, width: number) {
         this.autoHeight = height;
         this.autoWidth = width;
-        //this.notifyOutputChanged();
+        this.notifyOutputChanged();
     }
 
     /**
@@ -64,10 +64,11 @@ export class MUICheckbox implements ComponentFramework.ReactControl<IInputs, IOu
             align: inputs.Align.raw,
             verticalAlign: inputs.VerticalAlign.raw,
             wrap: inputs.Wrap.raw,
+            reset: inputs.Reset?.raw,
             appTheme: appTheme,
             isEnabled: context.mode.isControlDisabled,
             onChange: this.onChange,
-            //handleAutoSizing: this.handleAutoSizing,
+            handleAutoSizing: this.handleAutoSizing,
             rippleEffect: inputs.RippleEffect.raw,
             font: inputs.Font?.raw as string,
             fontSize: inputs.FontSize.raw as number,

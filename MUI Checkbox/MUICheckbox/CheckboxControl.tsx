@@ -11,10 +11,11 @@ export interface ICheckboxProps {
   align: "flex-start" | "center" | "flex-end";
   verticalAlign: "flex-start" | "center" | "flex-end";
   wrap: boolean;
+  reset?: boolean;
   appTheme: ComponentFramework.Theme,
   isEnabled: boolean;
   onChange: (newValue: boolean) => void;
-  //handleAutoSizing: (height: number, width: number) => void;
+  handleAutoSizing: (height: number, width: number) => void;
   rippleEffect: boolean;
   font?: string;
   fontSize?: number;
@@ -32,31 +33,34 @@ const MUICheckboxControl: React.FC<ICheckboxProps> = (props) => {
   const theme = createTheme({
     palette: {
       primary: {
-        main: Utils.handleDefault(props.primaryColor) || props.appTheme?.colorBrandForeground1 || "#0078d4"
-      }
+        main: Utils.handleDefault(props.primaryColor) || props.appTheme?.colorBrandForeground1 || "#0078d4",
+      },
     },
     typography: {
       fontFamily: Utils.handleDefault(props.font) || props.appTheme?.fontFamilyBase || "Segoe UI",
       body1: {
         fontSize: props.fontSize || props.appTheme?.fontSizeBase300 || 14,
         fontWeight: Utils.mapFontWeight(props.fontWeight, props) || props.appTheme?.fontWeightRegular || "Normal",
-      }
+        color: props.fontColor || "",
+      },
     },
     components: {
       MuiTouchRipple: {
         styleOverrides: {
-          root: { 
-            height: '100%', 
-            width: '100%', 
+          root: {
+            height: '100%',
+            width: '100%',
           },
         },
       },
-    }
+    },
   });
   const key = React.useMemo(() => Utils.generateGUID(), []);
-  const onChange = React.useCallback(() => {props.onChange(!state)}, [props.onChange]);
+  const onChange = React.useCallback((newState: boolean) => {
+    props.onChange(newState);
+  }, [props.onChange]);
 
-  React.useLayoutEffect(() => {
+  React.useEffect(() => {
     if (boxRef.current && formRef.current) {
       const style = window.getComputedStyle(boxRef.current);
       const marginLeft = parseFloat(style.marginLeft);
@@ -65,14 +69,19 @@ const MUICheckboxControl: React.FC<ICheckboxProps> = (props) => {
 
       const currentHeight = formRef.current.clientHeight;
       const currentWidth = formRef.current.clientWidth + totalMargin + 1;
-      //props.handleAutoSizing(currentHeight, currentWidth);
+      props.handleAutoSizing(currentHeight, currentWidth);
     }
   }, [props.font, props.fontSize, props.fontWeight, props.label, props.size, props.labelPosition, props.align, props.verticalAlign, boxRef.current?.clientWidth, props.wrap]);
 
+  React.useEffect(() => {
+    if (props.reset) {
+      setState(props.value || false);
+    }
+  }, [props.reset, props.value]);
 
    const handleChange = React.useCallback((currentState: boolean) => {
     setState(!currentState);
-    onChange();
+    onChange(!currentState);
     console.log("handle change called ")
   }, []);
 

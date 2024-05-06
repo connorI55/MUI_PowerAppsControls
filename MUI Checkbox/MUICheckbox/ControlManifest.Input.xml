@@ -46,7 +46,11 @@
       <value name="Middle" display-name-key="Center">center</value>
       <value name="Bottom" display-name-key="End">flex-end</value>
     </property>
-    <property name="Wrap" display-name-key="Wrap" description-key="Wrap label text" of-type="TwoOptions" usage="input" required="true" default-value="false">
+    <property name="Wrap" display-name-key="Wrap" description-key="don not use with Auto Width" of-type="TwoOptions" usage="input" required="true" default-value="false">
+      <value name="True" display-name-key="True">true</value>
+      <value name="False" display-name-key="False">false</value>
+    </property>
+    <property name="Reset" display-name-key="Reset" description-key="Set true to reset to default" of-type="TwoOptions" usage="input" required="false" default-value="false">
       <value name="True" display-name-key="True">true</value>
       <value name="False" display-name-key="False">false</value>
     </property>
@@ -73,7 +77,7 @@
       <value name="false" display-name-key="false">false</value>
     </property>
     <property name="AutoHeight" display-name-key="Auto Height" description-key="Control auto height" of-type="Decimal" usage="output"></property>
-    <property name="AutoWidth" display-name-key="Auto Width" description-key="Control auto width" of-type="Decimal" usage="output"></property>
+    <property name="AutoWidth" display-name-key="Auto Width" description-key="Control auto width - turn wrap OFF" of-type="Decimal" usage="output"></property>
 
     <!--
       Property node's of-type attribute can be of-type-group attribute.
