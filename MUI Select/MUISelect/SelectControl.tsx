@@ -3,8 +3,11 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
+import * as Utils from '../../utils';
 
 export interface ISelectProps {
+    items: ComponentFramework.PropertyTypes.DataSet;
+    displayFields?: string[];
     label?: string;
     //size: "small" | "medium" | "large";
     default?: string;
@@ -34,25 +37,33 @@ export interface ISelectProps {
   
 
 const MUISelectControl: React.FC<ISelectProps> = (props) => {
-    const [age, setAge] = React.useState('');
-  
+    const [selectedItemID, setSelected] = React.useState('');
+    const parentKey = React.useMemo(() => Utils.generateGUID(), []);
     const handleChange = (event: SelectChangeEvent) => {
-      setAge(event.target.value as string);
+      setSelected(event.target.value as string);
     };
-    console.log("rendered")
+    const records = props.items.sortedRecordIds.map(id => props.items?.records[id]) ?? [];
+    const columns = props.items.columns;
+    const displayColumn = props.displayFields ? props.displayFields[0] : columns[0].name;
     return (
-        <FormControl fullWidth>
-          <InputLabel id="demo-simple-select-label">Age</InputLabel>
+        <FormControl fullWidth={true} key={parentKey}>
+          <InputLabel id={parentKey + "-label"}>{props?.label}</InputLabel>
           <Select
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            value={age}
-            label="Age"
+            labelId={parentKey + "-select-label"}
+            id={parentKey + "-select-id"}
+            value={selectedItemID}
+            label={displayColumn}
             onChange={handleChange}
           >
-            <MenuItem value={10}>Ten</MenuItem>
-            <MenuItem value={20}>Twenty</MenuItem>
-            <MenuItem value={30}>Thirty</MenuItem>
+        
+            {records.map((record) => {
+              const id = record?.getRecordId();
+              const formattedValue = record?.getFormattedValue(displayColumn);
+              return (
+                <MenuItem key={id} value={id}>{formattedValue}</MenuItem>
+              );
+            })}
+            
           </Select>
         </FormControl>
     );

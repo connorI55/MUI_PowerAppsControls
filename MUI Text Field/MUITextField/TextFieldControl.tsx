@@ -20,6 +20,7 @@ export interface ITextFieldProps {
   verticalAlign: "flex-start" | "center" | "flex-end";
   appTheme: ComponentFramework.Theme,
   isEnabled: boolean;
+  reset?: boolean;
   handleEvent: (newValue: string) => void;
   handleAutoSizing: (height: number) => void;
   font?: string;
@@ -86,6 +87,10 @@ const MUITextField_Control: React.FC<ITextFieldProps> = (props) => {
       props.handleAutoSizing(currentHeight + totalMargin);
     }
   }, [props.font, props.fontSize, props.fontWeight, props.label, props.size, props.fullHeight, props.helperText, props.style, inputRef.current]);
+
+  React.useEffect(() => {
+   
+  }, [props.reset, props.default]);
 
   console.log("rendered")
 

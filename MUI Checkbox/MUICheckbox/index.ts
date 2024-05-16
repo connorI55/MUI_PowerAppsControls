@@ -17,6 +17,8 @@ export class MUICheckbox implements ComponentFramework.ReactControl<IInputs, IOu
     constructor() {
         this.onChange = this.onChange.bind(this);
         this.handleAutoSizing = this.handleAutoSizing.bind(this);
+        this.autoHeight=0;
+        this.autoWidth=0;
     }
 
     onChange(newValue: boolean) {
@@ -26,9 +28,12 @@ export class MUICheckbox implements ComponentFramework.ReactControl<IInputs, IOu
     }
 
     handleAutoSizing(height: number, width: number) {
+        
         this.autoHeight = height;
         this.autoWidth = width;
-        this.notifyOutputChanged();
+        console.log("Handle Auto Sizing Called: Height: " + this.autoHeight + " Width: " + this.autoWidth);
+        this.notifyOutputChanged()
+
     }
 
     /**
@@ -86,7 +91,7 @@ export class MUICheckbox implements ComponentFramework.ReactControl<IInputs, IOu
      * @returns an object based on nomenclature defined in manifest, expecting object[s] for property marked as “bound” or “output”
      */
     public getOutputs(): IOutputs {
-        console.log("getOutputs called")
+        console.log("getOutputs called " + this.autoHeight + " " + this.autoWidth)
         return { 
             Value: this.checkboxValue,
             AutoHeight: this.autoHeight,
@@ -101,8 +106,4 @@ export class MUICheckbox implements ComponentFramework.ReactControl<IInputs, IOu
     public destroy(): void {
         // Add code to cleanup control if necessary
     }
-
-    public generateRandomKey() {
-        return `key_${Math.random().toString(36).substr(2, 9)}_${Date.now()}`;
-      }
 }

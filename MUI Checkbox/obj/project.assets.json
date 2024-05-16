@@ -14,70 +14,7 @@
           "build/Microsoft.NETFramework.ReferenceAssemblies.net462.targets": {}
         }
       },
-      "Microsoft.PowerApps.MSBuild.Pcf/1.31.2": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.PowerApps.MSBuild.Pcf.props": {},
-          "build/Microsoft.PowerApps.MSBuild.Pcf.targets": {}
-        }
-      }
-    },
-    ".NETFramework,Version=v4.6.2/win": {
-      "Microsoft.NETFramework.ReferenceAssemblies/1.0.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.NETFramework.ReferenceAssemblies.net462": "1.0.0"
-        }
-      },
-      "Microsoft.NETFramework.ReferenceAssemblies.net462/1.0.0": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.NETFramework.ReferenceAssemblies.net462.targets": {}
-        }
-      },
-      "Microsoft.PowerApps.MSBuild.Pcf/1.31.2": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.PowerApps.MSBuild.Pcf.props": {},
-          "build/Microsoft.PowerApps.MSBuild.Pcf.targets": {}
-        }
-      }
-    },
-    ".NETFramework,Version=v4.6.2/win-x64": {
-      "Microsoft.NETFramework.ReferenceAssemblies/1.0.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.NETFramework.ReferenceAssemblies.net462": "1.0.0"
-        }
-      },
-      "Microsoft.NETFramework.ReferenceAssemblies.net462/1.0.0": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.NETFramework.ReferenceAssemblies.net462.targets": {}
-        }
-      },
-      "Microsoft.PowerApps.MSBuild.Pcf/1.31.2": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.PowerApps.MSBuild.Pcf.props": {},
-          "build/Microsoft.PowerApps.MSBuild.Pcf.targets": {}
-        }
-      }
-    },
-    ".NETFramework,Version=v4.6.2/win-x86": {
-      "Microsoft.NETFramework.ReferenceAssemblies/1.0.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.NETFramework.ReferenceAssemblies.net462": "1.0.0"
-        }
-      },
-      "Microsoft.NETFramework.ReferenceAssemblies.net462/1.0.0": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.NETFramework.ReferenceAssemblies.net462.targets": {}
-        }
-      },
-      "Microsoft.PowerApps.MSBuild.Pcf/1.31.2": {
+      "Microsoft.PowerApps.MSBuild.Pcf/1.32.5": {
         "type": "package",
         "build": {
           "build/Microsoft.PowerApps.MSBuild.Pcf.props": {},
@@ -425,10 +362,10 @@
         "microsoft.netframework.referenceassemblies.net462.nuspec"
       ]
     },
-    "Microsoft.PowerApps.MSBuild.Pcf/1.31.2": {
-      "sha512": "UzimaMndqFUIByzVFAOWW6NT+iUAYmEzvIRhNChULxgT5GT7jTi1ni4kUtSRNVP46xH70qBJo5GaRvP2rs5Omw==",
+    "Microsoft.PowerApps.MSBuild.Pcf/1.32.5": {
+      "sha512": "TBKBtsm/LCYwi6bLsijysXZu8loFab1Vs8vir4C5DOrP7RyTFzojwvjFajKEANwYX2HwynwxTm9uMbqNWt019w==",
       "type": "package",
-      "path": "microsoft.powerapps.msbuild.pcf/1.31.2",
+      "path": "microsoft.powerapps.msbuild.pcf/1.32.5",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -436,7 +373,7 @@
         "LICENSE.txt",
         "build/Microsoft.PowerApps.MSBuild.Pcf.props",
         "build/Microsoft.PowerApps.MSBuild.Pcf.targets",
-        "microsoft.powerapps.msbuild.pcf.1.31.2.nupkg.sha512",
+        "microsoft.powerapps.msbuild.pcf.1.32.5.nupkg.sha512",
         "microsoft.powerapps.msbuild.pcf.nuspec",
         "tasks/Microsoft.PowerApps.MSBuild.Pcf.tasks",
         "tasks/net472/Microsoft.PowerPlatform.MSBuild.Telemetry.Tasks.dll",
@@ -512,9 +449,9 @@
         "tasks/net6.0/ppbtTelemetryRecorder/ppbtTelemetryRecorder.pdb",
         "tasks/net6.0/ppbtTelemetryRecorder/ppbtTelemetryRecorder.runtimeconfig.json",
         "tasks/net6.0/ppbtTelemetryRecorder/runtimes/browser/lib/net6.0/System.Text.Encodings.Web.dll",
-        "tasks/net6.0/runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.dll",
-        "tasks/net6.0/runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.dll",
-        "tasks/net6.0/runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.dll"
+        "tasks/net6.0/runtimes/unix/lib/net6.0/System.Drawing.Common.dll",
+        "tasks/net6.0/runtimes/win/lib/net6.0/Microsoft.Win32.SystemEvents.dll",
+        "tasks/net6.0/runtimes/win/lib/net6.0/System.Drawing.Common.dll"
       ]
     }
   },
@@ -525,26 +462,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Connor\\.nuget\\packages\\": {}
+    "C:\\Users\\ConnorIngram\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Connor\\Documents\\Work Web Resources\\PCF Controls\\MUI Controls\\MUI Checkbox\\MUI Canvas App Controls.pcfproj",
+      "projectUniqueName": "C:\\Users\\ConnorIngram\\Documents\\MUI Clone\\MUI_PowerAppsControls\\MUI Checkbox\\MUI Canvas App Controls.pcfproj",
       "projectName": "MUI Canvas App Controls",
-      "projectPath": "C:\\Users\\Connor\\Documents\\Work Web Resources\\PCF Controls\\MUI Controls\\MUI Checkbox\\MUI Canvas App Controls.pcfproj",
-      "packagesPath": "C:\\Users\\Connor\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Connor\\Documents\\Work Web Resources\\PCF Controls\\MUI Controls\\MUI Checkbox\\obj\\",
+      "projectPath": "C:\\Users\\ConnorIngram\\Documents\\MUI Clone\\MUI_PowerAppsControls\\MUI Checkbox\\MUI Canvas App Controls.pcfproj",
+      "packagesPath": "C:\\Users\\ConnorIngram\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ConnorIngram\\Documents\\MUI Clone\\MUI_PowerAppsControls\\MUI Checkbox\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Connor\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\ConnorIngram\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net462"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -552,6 +487,11 @@
           "targetAlias": "net462",
           "projectReferences": {}
         }
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -568,17 +508,6 @@
             "version": "[1.*, )"
           }
         }
-      }
-    },
-    "runtimes": {
-      "win": {
-        "#import": []
-      },
-      "win-x64": {
-        "#import": []
-      },
-      "win-x86": {
-        "#import": []
       }
     }
   }

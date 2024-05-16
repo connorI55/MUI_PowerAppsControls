@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Connor\\Documents\\Work Web Resources\\PCF Controls\\MUI Controls\\MUI Checkbox\\MUI Canvas App Controls.pcfproj": {}
+    "C:\\Users\\ConnorIngram\\Documents\\MUI Clone\\MUI_PowerAppsControls\\MUI Checkbox\\MUI Canvas App Controls.pcfproj": {}
   },
   "projects": {
-    "C:\\Users\\Connor\\Documents\\Work Web Resources\\PCF Controls\\MUI Controls\\MUI Checkbox\\MUI Canvas App Controls.pcfproj": {
+    "C:\\Users\\ConnorIngram\\Documents\\MUI Clone\\MUI_PowerAppsControls\\MUI Checkbox\\MUI Canvas App Controls.pcfproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Connor\\Documents\\Work Web Resources\\PCF Controls\\MUI Controls\\MUI Checkbox\\MUI Canvas App Controls.pcfproj",
+        "projectUniqueName": "C:\\Users\\ConnorIngram\\Documents\\MUI Clone\\MUI_PowerAppsControls\\MUI Checkbox\\MUI Canvas App Controls.pcfproj",
         "projectName": "MUI Canvas App Controls",
-        "projectPath": "C:\\Users\\Connor\\Documents\\Work Web Resources\\PCF Controls\\MUI Controls\\MUI Checkbox\\MUI Canvas App Controls.pcfproj",
-        "packagesPath": "C:\\Users\\Connor\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Connor\\Documents\\Work Web Resources\\PCF Controls\\MUI Controls\\MUI Checkbox\\obj\\",
+        "projectPath": "C:\\Users\\ConnorIngram\\Documents\\MUI Clone\\MUI_PowerAppsControls\\MUI Checkbox\\MUI Canvas App Controls.pcfproj",
+        "packagesPath": "C:\\Users\\ConnorIngram\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ConnorIngram\\Documents\\MUI Clone\\MUI_PowerAppsControls\\MUI Checkbox\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Connor\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\ConnorIngram\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net462"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -29,6 +27,11 @@
             "targetAlias": "net462",
             "projectReferences": {}
           }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -45,17 +48,6 @@
               "version": "[1.*, )"
             }
           }
-        }
-      },
-      "runtimes": {
-        "win": {
-          "#import": []
-        },
-        "win-x64": {
-          "#import": []
-        },
-        "win-x86": {
-          "#import": []
         }
       }
     }

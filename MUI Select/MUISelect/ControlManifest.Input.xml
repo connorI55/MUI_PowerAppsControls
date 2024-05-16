@@ -18,6 +18,8 @@
       -->
     </external-service-usage>
     <!-- input properties -->
+    <data-set name="Items" display-name-key="Data source"/>
+    <property name="DisplayColumns" display-name-key="Display Columns" description-key="CSV list of columns to display" of-type="SingleLine.Text" usage="input" required="false"/>
     <property name="Label" display-name-key="Label" description-key="Textbox label" of-type="SingleLine.Text" usage="input" required="false" default-value="label"/>
     <property name="Placeholder" display-name-key="Placeholder" description-key="Textbox placeholder" of-type="SingleLine.Text" usage="input" required="false"/>
     <property name="Default" display-name-key="Default" description-key="Textbox default value" of-type="SingleLine.Text" usage="input" required="false"/>
@@ -66,12 +68,6 @@
     <property name="AutoWidth" display-name-key="Auto Width" description-key="Control auto width" of-type="Decimal" usage="output"></property>
     -->
     <!-- dataset node represents a set of entity records on CDS; allow more than one datasets -->
-    <data-set name="sampleDataSet" display-name-key="Dataset_Display_Key">
-      <!-- 'property-set' node represents a unique, configurable property that each record in the dataset must provide. -->
-      <!-- UNCOMMENT TO ADD PROPERTY-SET NODE
-      <property-set name="samplePropertySet" display-name-key="Property_Display_Key" description-key="Property_Desc_Key" of-type="SingleLine.Text" usage="bound" required="true" />
-      -->
-    </data-set>
     <resources>
       <code path="index.ts" order="1"/>
       <platform-library name="React" version="16.8.6" />

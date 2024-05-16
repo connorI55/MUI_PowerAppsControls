@@ -2,3 +2,5 @@ C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Canvas App Control
 C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Canvas App Controls\obj\Debug\MUI Canvas App Controls.pcfproj.CoreCompileInputs.cache
 C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\Debug\MUI Canvas App Controls.pcfprojAssemblyReference.cache
 C:\Users\Connor\Documents\Work Web Resources\PCF Controls\MUI Controls\MUI Checkbox\obj\Debug\MUI Canvas App Controls.pcfproj.CoreCompileInputs.cache
+C:\Users\ConnorIngram\Documents\MUI Clone\MUI_PowerAppsControls\MUI Checkbox\obj\Debug\MUI Canvas App Controls.pcfproj.AssemblyReference.cache
+C:\Users\ConnorIngram\Documents\MUI Clone\MUI_PowerAppsControls\MUI Checkbox\obj\Debug\MUI Canvas App Controls.pcfproj.CoreCompileInputs.cache
