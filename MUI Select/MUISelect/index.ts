@@ -61,6 +61,7 @@ export class MUISelect implements ComponentFramework.ReactControl<IInputs, IOutp
             //mode: inputs.Mode.raw,
             //rows: inputs.Rows.raw as number,
             required: inputs.Required.raw,
+            autoWidth: inputs.AutoWidth.raw,
             //adornmnetPosition: inputs.AdornmentPosition.raw,
             //adornmentValue: inputs.AdornmentValue?.raw || "",
             //align: inputs.Align.raw,

@@ -6,6 +6,10 @@ import FormHelperText from '@mui/material/FormHelperText';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import * as Utils from '../../utils';
 import { Typography } from '@mui/material';
+import Checkbox from '@mui/material/Checkbox';
+import Chip from '@mui/material/Chip';
+import Box from '@mui/material/Box';
+import { Theme, useTheme } from '@mui/material/styles';
 
 export interface ISelectProps {
     items: ComponentFramework.PropertyTypes.DataSet;
@@ -21,6 +25,7 @@ export interface ISelectProps {
     //rows?: number;
     size: "small" | "medium" ;
     required: boolean;
+    autoWidth: boolean;
     //adornmentValue?: string;
     //adornmnetPosition: "start" | "end";
     //align: "flex-start" | "center" | "flex-end";
@@ -37,7 +42,15 @@ export interface ISelectProps {
     focus?: boolean;
     validationState: "error" | "none";
   }
-  
+
+  function getStyles(name: string, personName: readonly string[], theme: Theme) {
+    return {
+      fontWeight:
+        personName.indexOf(name) === -1
+          ? theme.typography.fontWeightRegular
+          : theme.typography.fontWeightMedium,
+    };
+  }
 
 const MUISelectControl: React.FC<ISelectProps> = (props) => {
   console.log("rendered")
@@ -56,7 +69,7 @@ const MUISelectControl: React.FC<ISelectProps> = (props) => {
     }
 
   };
-  const handleClick = (event: React.MouseEvent<HTMLElement>, id: string) => {
+  const handleClick = (id: string) => {
     selectedItemIDs[0] === id ? setSelectedIDs([]) : setSelectedIDs([id]);
   }
   const records = props.items.sortedRecordIds.map(id => props.items?.records[id]) ?? [];
@@ -64,11 +77,10 @@ const MUISelectControl: React.FC<ISelectProps> = (props) => {
   const columnNames = columns.map(col => col.name);
   const displayColumns = Utils.handleDisplayColumns(props.displayColumns ?? [], columnNames);
   const selectedRecords: ComponentFramework.PropertyHelper.DataSetApi.EntityRecord[] = 
-    records.filter(record => selectedItemIDs.some(id => id === record?.getRecordId())) as ComponentFramework.PropertyHelper.DataSetApi.EntityRecord[];
+    records.filter(record => selectedItemIDs.some(id => id === record?.getRecordId()));
   const selectedDisplayValue = selectedRecords[0] ? selectedRecords?.map(record => record.getFormattedValue(displayColumns.primaryColumn)).join(', ') : '';
   const selectValue = props.multiSelect ? selectedItemIDs : selectedItemIDs[0] ?? '';
   const cleanedHelperText = Utils.handleDefault(props.helperText);
-
 
   React.useEffect(() => {
       setSelectedIDs([] as string[]);
@@ -77,12 +89,13 @@ const MUISelectControl: React.FC<ISelectProps> = (props) => {
   return (
       <FormControl 
         variant={props.style}
-        fullWidth={true} 
+        fullWidth={!props.autoWidth} 
         key={parentKey} 
         required={props.required} 
         disabled={props.isEnabled} 
         error = {props.validationState == "error"}
         size={props.size}
+        sx={{ minWidth: 80 }}
       >
         <InputLabel 
           id={parentKey + "-label"}>{props?.label}
@@ -91,11 +104,24 @@ const MUISelectControl: React.FC<ISelectProps> = (props) => {
           labelId={parentKey + "-select-label"}
           id={parentKey + "-select-id"}
           multiple={props.multiSelect}
+          autoWidth={props.autoWidth}
           value={selectValue}
           label={props?.label} 
           onChange={handleChange}
-          renderValue={() => {
-            if (selectedItemIDs.length > 0) {
+          renderValue={(selected) => {
+            if (props.multiSelectStyle === "chips" && props.multiSelect && Array.isArray(selected)) {
+              return (
+                <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
+                  {selected.map((value) => {
+                    const record = selectedRecords.find(record => record.getRecordId() === value);
+                    const formattedValue = record ? record.getFormattedValue(displayColumns.primaryColumn) : value;
+                    return <Chip key={value} label={formattedValue}/>;
+                  })}
+                </Box>
+              );
+            }
+
+            else if (selectedItemIDs.length > 0) {
               return <div>{selectedDisplayValue}</div>;
             }
             return <em>{Utils.handleDefault(props.placeholder)}</em>;
@@ -109,17 +135,22 @@ const MUISelectControl: React.FC<ISelectProps> = (props) => {
               <MenuItem 
               key={id} 
               value={id}
-              onClick={(event) => !props.multiSelect ? handleClick(event, id) : null}
+              onClick={() => !props.multiSelect ? handleClick(id) : null}
               >
-                <div>
-                  <Typography variant="body1" color="textPrimary">
-                    {formattedPrimaryValue}
-                  </Typography>
-                  {displayColumns.displayColumns.map((otherColumn) => (
+                <div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', width: '100%'}}>
+                    {props.multiSelectStyle === "checkmarks" ? <Checkbox checked={selectedItemIDs.indexOf(id) > -1} /> : null}
+                    <Typography variant="body1" color="textPrimary">
+                      {formattedPrimaryValue}
+                    </Typography>
+                  </div>
+                  <div style={{ display: 'flex', width: '100%', flexDirection: 'column' }}>
+                    {displayColumns.displayColumns.map((otherColumn) => (
                     <Typography variant="body2" color="textSecondary" key={id + "-" + otherColumn}>
                       {record?.getFormattedValue(otherColumn)}
                     </Typography>
                   ))}
+                  </div>
                 </div>
               </MenuItem>
             );

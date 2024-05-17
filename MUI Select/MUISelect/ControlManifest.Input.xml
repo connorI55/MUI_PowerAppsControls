@@ -62,6 +62,10 @@
       <value name="None" display-name-key="None">none</value>
       <value name="Error" display-name-key="Error">error</value>
     </property>
+     <property name="AutoWidth" display-name-key="Auto Width" description-key="Expand control width" of-type="TwoOptions" usage="input" required="true" default-value="false">
+      <value name="True" display-name-key="True">true</value>
+      <value name="False" display-name-key="False">false</value>
+    </property>
 
     <!-- theme properties -->
     <property name="Font" display-name-key="Font" description-key="Font" of-type="SingleLine.Text" usage="input" required="false"/>
