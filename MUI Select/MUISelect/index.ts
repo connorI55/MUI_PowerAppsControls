@@ -53,6 +53,7 @@ export class MUISelect implements ComponentFramework.ReactControl<IInputs, IOutp
             label: inputs.Label?.raw || "",
             style: inputs.Style.raw,
             multiSelect: inputs.MultipleSelection.raw,
+            multiSelectStyle: inputs.MultiSelectStyle.raw,
             default: inputs.Default?.raw || "",
             placeholder: inputs.Placeholder?.raw || "",
             helperText: inputs.HelperText?.raw || "",

@@ -41,6 +41,11 @@
       <value name="True" display-name-key="True">true</value>
       <value name="False" display-name-key="False">false</value>
     </property>
+    <property name="MultiSelectStyle" display-name-key="Multi Select Style" description-key="Style of multi select" of-type="Enum" usage="input" required="true" default-value="default">
+      <value name="Default" display-name-key="Default">default</value>
+      <value name="Checkmarks" display-name-key="Checkmarks">checkmarks</value>
+      <value name="Chips" display-name-key="Chips">chips</value>
+    </property>
     <!--
     <property name="Align" display-name-key="Align" description-key="Horizontal alignment" of-type="Enum" usage="input" required="true" default-value="flex-start">
       <value name="Start" display-name-key="Start">flex-start</value>
