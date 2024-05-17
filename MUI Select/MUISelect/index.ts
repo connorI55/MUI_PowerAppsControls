@@ -47,7 +47,7 @@ export class MUISelect implements ComponentFramework.ReactControl<IInputs, IOutp
         const props: ISelectProps =
         { 
             items: inputs.Items,
-            displayFields: inputs?.DisplayColumns.raw ? inputs.DisplayColumns.raw.split(",") : [],
+            displayColumns: inputs.DisplayColumns?.raw ? inputs.DisplayColumns?.raw.split(",") : [],
             label: inputs.Label?.raw || "",
             //style: inputs.Style.raw,
             default: inputs.Default?.raw || "",

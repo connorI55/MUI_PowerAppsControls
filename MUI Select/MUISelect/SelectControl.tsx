@@ -1,13 +1,14 @@
 import * as React from 'react';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
+import CustomMenuItem from './customMenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import * as Utils from '../../utils';
 
 export interface ISelectProps {
     items: ComponentFramework.PropertyTypes.DataSet;
-    displayFields?: string[];
+    displayColumns?: string[];
     label?: string;
     //size: "small" | "medium" | "large";
     default?: string;
@@ -37,6 +38,7 @@ export interface ISelectProps {
   
 
 const MUISelectControl: React.FC<ISelectProps> = (props) => {
+  console.log("rendered")
     const [selectedItemID, setSelected] = React.useState('');
     const parentKey = React.useMemo(() => Utils.generateGUID(), []);
     const handleChange = (event: SelectChangeEvent) => {
@@ -44,7 +46,8 @@ const MUISelectControl: React.FC<ISelectProps> = (props) => {
     };
     const records = props.items.sortedRecordIds.map(id => props.items?.records[id]) ?? [];
     const columns = props.items.columns;
-    const displayColumn = props.displayFields ? props.displayFields[0] : columns[0].name;
+    const columnNames = columns.map(col => col.name);
+    const displayColumns = Utils.handleDisplayColumns(props.displayColumns ?? [], columnNames);
     return (
         <FormControl fullWidth={true} key={parentKey}>
           <InputLabel id={parentKey + "-label"}>{props?.label}</InputLabel>
@@ -52,15 +55,19 @@ const MUISelectControl: React.FC<ISelectProps> = (props) => {
             labelId={parentKey + "-select-label"}
             id={parentKey + "-select-id"}
             value={selectedItemID}
-            label={displayColumn}
+            label={displayColumns.primaryColumn} 
             onChange={handleChange}
           >
         
             {records.map((record) => {
               const id = record?.getRecordId();
-              const formattedValue = record?.getFormattedValue(displayColumn);
+              const formattedValue = record?.getFormattedValue(displayColumns.primaryColumn);
               return (
-                <MenuItem key={id} value={id}>{formattedValue}</MenuItem>
+                <MenuItem 
+                key={id} 
+                value={id}>
+                {formattedValue}
+                </MenuItem>
               );
             })}
             
