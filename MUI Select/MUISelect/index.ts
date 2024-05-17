@@ -44,16 +44,19 @@ export class MUISelect implements ComponentFramework.ReactControl<IInputs, IOutp
         console.log("updateView Called")
         const inputs = context.parameters
         const appTheme = context.fluentDesignLanguage?.tokenTheme
+        const cleanedDisplayColumns = inputs.DisplayColumns?.raw?.replace(/\s/g, '');
+        const displayColumnsArray = cleanedDisplayColumns ? cleanedDisplayColumns.split(",") : [];
         const props: ISelectProps =
         { 
             items: inputs.Items,
-            displayColumns: inputs.DisplayColumns?.raw ? inputs.DisplayColumns?.raw.split(",") : [],
+            displayColumns: displayColumnsArray,
             label: inputs.Label?.raw || "",
-            //style: inputs.Style.raw,
+            style: inputs.Style.raw,
+            multiSelect: inputs.MultipleSelection.raw,
             default: inputs.Default?.raw || "",
             placeholder: inputs.Placeholder?.raw || "",
             helperText: inputs.HelperText?.raw || "",
-            //size: inputs.Size.raw,
+            size: inputs.Size.raw,
             //mode: inputs.Mode.raw,
             //rows: inputs.Rows.raw as number,
             required: inputs.Required.raw,
