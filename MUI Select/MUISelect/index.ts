@@ -8,13 +8,33 @@ import * as React from "react";
 export class MUISelect implements ComponentFramework.ReactControl<IInputs, IOutputs> {
     private theComponent: ComponentFramework.ReactControl<IInputs, IOutputs>;
     private notifyOutputChanged: () => void;
-    //private textboxValue: string | undefined;
-    private handleEvent: (newValue: string) => void;
+    private checkboxValue: boolean;
+    private autoHeight: number;
+    private autoWidth: number;
 
     /**
      * Empty constructor.
      */
-    constructor() { }
+    constructor() { 
+        this.onChange = this.onChange.bind(this);
+        this.handleAutoSizing = this.handleAutoSizing.bind(this);
+        this.autoHeight=0;
+        this.autoWidth=0;
+    }
+
+    onChange(newValue: string) {
+        console.log("onChange called");
+        this.notifyOutputChanged();
+    }
+
+    handleAutoSizing(height: number, width: number) {
+        
+        this.autoHeight = height;
+        this.autoWidth = width;
+        console.log("Handle Auto Sizing Called: Height: " + this.autoHeight + " Width: " + this.autoWidth);
+        this.notifyOutputChanged()
+
+    }
 
     /**
      * Used to initialize the control instance. Controls can kick off remote server calls and other initialization actions here.
@@ -64,12 +84,12 @@ export class MUISelect implements ComponentFramework.ReactControl<IInputs, IOutp
             autoWidth: inputs.AutoWidth.raw,
             //adornmnetPosition: inputs.AdornmentPosition.raw,
             //adornmentValue: inputs.AdornmentValue?.raw || "",
-            //align: inputs.Align.raw,
-            //verticalAlign: inputs.VerticalAlign.raw,
+            align: inputs.Align.raw,
+            verticalAlign: inputs.VerticalAlign.raw,
             appTheme: appTheme,
             isEnabled: context.mode.isControlDisabled,
-            //handleEvent: this.handleEvent,
-            //handleAutoSizing: this.handleAutoSizing,
+            handleEvent: this.onChange,
+            handleAutoSizing: this.handleAutoSizing,
             font: inputs.Font?.raw as string,
             fontSize: inputs.FontSize.raw as number,
             fontWeight: inputs.FontWeight.raw,

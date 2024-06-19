@@ -46,7 +46,7 @@
       <value name="Checkmarks" display-name-key="Checkmarks">checkmarks</value>
       <value name="Chips" display-name-key="Chips">chips</value>
     </property>
-    <!--
+    
     <property name="Align" display-name-key="Align" description-key="Horizontal alignment" of-type="Enum" usage="input" required="true" default-value="flex-start">
       <value name="Start" display-name-key="Start">flex-start</value>
       <value name="Center" display-name-key="Center">center</value>
@@ -57,7 +57,6 @@
       <value name="Middle" display-name-key="Center">center</value>
       <value name="Bottom" display-name-key="End">flex-end</value>
     </property>
-    -->
     <property name="ValidationState" display-name-key="Validation State" description-key="Show error if not valid entry" of-type="Enum" usage="input" required="true" default-value="none">
       <value name="None" display-name-key="None">none</value>
       <value name="Error" display-name-key="Error">error</value>

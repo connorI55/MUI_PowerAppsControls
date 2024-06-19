@@ -3,3 +3,4 @@ export { generateGUID } from './generateGUID';
 export { handleDefault } from './handleHarnessDefaults';
 export { boxMultiplier } from './boxMultiplier';
 export { handleDisplayColumns } from './handleDisplayColumns';
+export { validateHTML } from './validateHTML';
