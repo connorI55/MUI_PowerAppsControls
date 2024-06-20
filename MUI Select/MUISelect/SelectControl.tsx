@@ -149,7 +149,7 @@ const MUISelectControl: React.FC<ISelectProps> = (props) => {
     
     props.onChange(JSON.stringify(selectedRecordValues));
 
-  }, [selectedItemIDs, props.items]);
+  }, [selectedItemIDs]);
 
   React.useEffect(() => {
       setSelectedIDs([] as string[]);
@@ -247,8 +247,16 @@ const MUISelectControl: React.FC<ISelectProps> = (props) => {
                   {displayColumns.displayColumns.map((otherColumn) => {
                     const formattedValue = record?.getFormattedValue(otherColumn);
                     const isHTML = formattedValue && formattedValue.trim().startsWith('<');
+                    
 
-                    if (isHTML) {
+                    if (!isHTML) {
+                      return (
+                        <Typography variant="body2" color="textSecondary" key={`${id}-${otherColumn}`}>
+                          <div>{formattedValue}</div>
+                        </Typography>
+                      );
+                    }
+                    else if (isHTML) {
                       const validatedHTML = Utils.validateHTML(formattedValue);
                       if (validatedHTML.isValid) {
                         return <span key={`${id}-${otherColumn}`} dangerouslySetInnerHTML={{ __html: validatedHTML.sanitizedHTML as string }} />
@@ -256,7 +264,7 @@ const MUISelectControl: React.FC<ISelectProps> = (props) => {
                       else {
                         return (
                           <Typography variant="body2" color="textSecondary" key={`${id}-${otherColumn}`}>
-                            <div>"{formattedValue}"</div>
+                            <div>HTML detected, but is invalid</div>
                           </Typography>
                         );
                       
