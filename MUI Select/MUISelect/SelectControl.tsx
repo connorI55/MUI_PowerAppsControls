@@ -10,6 +10,7 @@ import Checkbox from '@mui/material/Checkbox';
 import Chip from '@mui/material/Chip';
 import Box from '@mui/material/Box';
 import { Theme, useTheme } from '@mui/material/styles';
+import { on } from 'events';
 
 export interface ISelectProps {
     items: ComponentFramework.PropertyTypes.DataSet;
@@ -34,6 +35,7 @@ export interface ISelectProps {
     isEnabled: boolean;
     handleEvent: (newValue: string) => void;
     handleAutoSizing: (height: number, width: number) => void;
+    onChange: (newValue: string) => void;
     font?: string;
     fontSize?: number;
     fontColor?: string;
@@ -56,10 +58,32 @@ const MUISelectControl: React.FC<ISelectProps> = (props) => {
   console.log("rendered")
   const [selectedItemIDs, setSelectedIDs] = React.useState<string[]>(([]));
   const parentKey = React.useMemo(() => Utils.generateGUID(), []);
+  const boxRef = React.useRef<HTMLDivElement>(null);
+  const formRef = React.useRef<HTMLDivElement>(null);
+  const records = props.items.sortedRecordIds.map(id => props.items?.records[id]) ?? [];
+  const columns = props.items.columns;
+  const columnNames = columns.map(col => col.name);
+  const displayColumns = Utils.handleDisplayColumns(props.displayColumns ?? [], columnNames);
+  const selectedRecords: ComponentFramework.PropertyHelper.DataSetApi.EntityRecord[] = 
+    records.filter(record => selectedItemIDs.some(id => id === record?.getRecordId()));
+  const selectedRecordValues = selectedRecords.map(record => {
+    const values: { [key: string]: string } = {};
+    columnNames.forEach(column => {
+      values[column] = record.getFormattedValue(column);
+    });
+    return values;
+  });
+  const selectedDisplayValue = selectedRecords[0] ? selectedRecords?.map(record => record.getFormattedValue(displayColumns.primaryColumn)).join(', ') : '';
+  const selectValue = props.multiSelect ? selectedItemIDs : selectedItemIDs[0] ?? '';
+  const cleanedHelperText = Utils.handleDefault(props.helperText);
+
   const handleChange = (event: SelectChangeEvent<string | string[]>) => {
     let newValues = event.target.value;
+    let selectedRecords: ComponentFramework.PropertyHelper.DataSetApi.EntityRecord[];
+  
     if(Array.isArray(newValues)){
       setSelectedIDs(newValues)
+
     }
     else if(!Array.isArray(newValues) && newValues === selectedItemIDs[0]) {
       setSelectedIDs([])
@@ -69,20 +93,12 @@ const MUISelectControl: React.FC<ISelectProps> = (props) => {
     }
 
   };
+
   const handleClick = (id: string) => {
     selectedItemIDs[0] === id ? setSelectedIDs([]) : setSelectedIDs([id]);
   }
-  const boxRef = React.useRef<HTMLDivElement>(null);
-  const formRef = React.useRef<HTMLDivElement>(null);
-  const records = props.items.sortedRecordIds.map(id => props.items?.records[id]) ?? [];
-  const columns = props.items.columns;
-  const columnNames = columns.map(col => col.name);
-  const displayColumns = Utils.handleDisplayColumns(props.displayColumns ?? [], columnNames);
-  const selectedRecords: ComponentFramework.PropertyHelper.DataSetApi.EntityRecord[] = 
-    records.filter(record => selectedItemIDs.some(id => id === record?.getRecordId()));
-  const selectedDisplayValue = selectedRecords[0] ? selectedRecords?.map(record => record.getFormattedValue(displayColumns.primaryColumn)).join(', ') : '';
-  const selectValue = props.multiSelect ? selectedItemIDs : selectedItemIDs[0] ?? '';
-  const cleanedHelperText = Utils.handleDefault(props.helperText);
+
+  
   const theme = createTheme({
     palette: {
       primary: {
@@ -118,6 +134,22 @@ const MUISelectControl: React.FC<ISelectProps> = (props) => {
       },
     },
   });
+
+  React.useEffect(() => {
+   
+    const selectedRecords: ComponentFramework.PropertyHelper.DataSetApi.EntityRecord[] = 
+      records.filter(record => selectedItemIDs.some(id => id === record?.getRecordId()));
+    const selectedRecordValues = selectedRecords.map(record => {
+      const values: { [key: string]: string } = {};
+      columnNames.forEach(column => {
+        values[column] = record.getFormattedValue(column);
+      });
+      return values;
+    });
+    
+    props.onChange(JSON.stringify(selectedRecordValues));
+
+  }, [selectedItemIDs, props.items]);
 
   React.useEffect(() => {
       setSelectedIDs([] as string[]);
@@ -219,12 +251,12 @@ const MUISelectControl: React.FC<ISelectProps> = (props) => {
                     if (isHTML) {
                       const validatedHTML = Utils.validateHTML(formattedValue);
                       if (validatedHTML.isValid) {
-                        return <span dangerouslySetInnerHTML={{ __html: validatedHTML.sanitizedHTML as string }} />
+                        return <span key={`${id}-${otherColumn}`} dangerouslySetInnerHTML={{ __html: validatedHTML.sanitizedHTML as string }} />
                       }
                       else {
                         return (
                           <Typography variant="body2" color="textSecondary" key={`${id}-${otherColumn}`}>
-                            <div>{formattedValue}</div>
+                            <div>"{formattedValue}"</div>
                           </Typography>
                         );
                       

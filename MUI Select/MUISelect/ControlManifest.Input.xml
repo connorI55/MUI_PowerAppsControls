@@ -79,7 +79,7 @@
     <property name="PrimaryColor" display-name-key="Primary Color" description-key="Primary color" of-type="SingleLine.Text" usage="input" required="false"/>
 
     <!-- output properties -->
-    <property name="Value" display-name-key="Value" description-key="Text input value" of-type="SingleLine.Text" usage="output"/>
+    <property name="SelectedItems" display-name-key="SelectedItems" description-key="Selected Items" of-type="SingleLine.Text" usage="output"></property>
     <!-- 
     <property name="AutoHeight" display-name-key="Auto Height" description-key="Control auto height" of-type="Decimal" usage="output"></property>
     <property name="AutoWidth" display-name-key="Auto Width" description-key="Control auto width" of-type="Decimal" usage="output"></property>

@@ -8,7 +8,7 @@ import * as React from "react";
 export class MUISelect implements ComponentFramework.ReactControl<IInputs, IOutputs> {
     private theComponent: ComponentFramework.ReactControl<IInputs, IOutputs>;
     private notifyOutputChanged: () => void;
-    private checkboxValue: boolean;
+    private selectedValue: string;
     private autoHeight: number;
     private autoWidth: number;
 
@@ -20,10 +20,12 @@ export class MUISelect implements ComponentFramework.ReactControl<IInputs, IOutp
         this.handleAutoSizing = this.handleAutoSizing.bind(this);
         this.autoHeight=0;
         this.autoWidth=0;
+        this.selectedValue = "";
     }
 
     onChange(newValue: string) {
         console.log("onChange called");
+        this.selectedValue = newValue;
         this.notifyOutputChanged();
     }
 
@@ -49,10 +51,6 @@ export class MUISelect implements ComponentFramework.ReactControl<IInputs, IOutp
         state: ComponentFramework.Dictionary
     ): void {
         this.notifyOutputChanged = notifyOutputChanged;
-        // this.handleEvent = (newValue: string) => {
-        //     this.textboxValue = newValue;
-        //     this.notifyOutputChanged();
-        // };
     }
 
     /**
@@ -90,6 +88,7 @@ export class MUISelect implements ComponentFramework.ReactControl<IInputs, IOutp
             isEnabled: context.mode.isControlDisabled,
             handleEvent: this.onChange,
             handleAutoSizing: this.handleAutoSizing,
+            onChange: this.onChange,
             font: inputs.Font?.raw as string,
             fontSize: inputs.FontSize.raw as number,
             fontWeight: inputs.FontWeight.raw,
@@ -106,8 +105,12 @@ export class MUISelect implements ComponentFramework.ReactControl<IInputs, IOutp
      * It is called by the framework prior to a control receiving new data.
      * @returns an object based on nomenclature defined in manifest, expecting object[s] for property marked as "bound" or "output"
      */
+
+
     public getOutputs(): IOutputs {
-        return { };
+        return { 
+            SelectedItems: this.selectedValue
+        } as IOutputs;
     }
 
     /**

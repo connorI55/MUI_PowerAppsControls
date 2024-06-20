@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "3647Dqupuz0=",
+  "dgSpecHash": "NFg1ZORjSHQmHrZp0z6h4t87yZ+NkoXldibwswHx1mH9U4CbovZx+oJ2vcubUNT8E+Qt1lpYsyOUO/viGQqNzA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ConnorIngram\\Documents\\MUI Clone\\MUI_PowerAppsControls\\MUI Checkbox\\MUI Canvas App Controls.pcfproj",
+  "projectFilePath": "C:\\Users\\Connor\\Documents\\Work Web Resources\\PCF Controls\\MUI Controls\\MUI Checkbox\\MUI Canvas App Controls.pcfproj",
   "expectedPackageFiles": [
-    "C:\\Users\\ConnorIngram\\.nuget\\packages\\microsoft.netframework.referenceassemblies\\1.0.0\\microsoft.netframework.referenceassemblies.1.0.0.nupkg.sha512",
-    "C:\\Users\\ConnorIngram\\.nuget\\packages\\microsoft.netframework.referenceassemblies.net462\\1.0.0\\microsoft.netframework.referenceassemblies.net462.1.0.0.nupkg.sha512",
-    "C:\\Users\\ConnorIngram\\.nuget\\packages\\microsoft.powerapps.msbuild.pcf\\1.32.5\\microsoft.powerapps.msbuild.pcf.1.32.5.nupkg.sha512"
+    "C:\\Users\\Connor\\.nuget\\packages\\microsoft.netframework.referenceassemblies\\1.0.0\\microsoft.netframework.referenceassemblies.1.0.0.nupkg.sha512",
+    "C:\\Users\\Connor\\.nuget\\packages\\microsoft.netframework.referenceassemblies.net462\\1.0.0\\microsoft.netframework.referenceassemblies.net462.1.0.0.nupkg.sha512",
+    "C:\\Users\\Connor\\.nuget\\packages\\microsoft.powerapps.msbuild.pcf\\1.32.5\\microsoft.powerapps.msbuild.pcf.1.32.5.nupkg.sha512"
   ],
   "logs": []
 }
