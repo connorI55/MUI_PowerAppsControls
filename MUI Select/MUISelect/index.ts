@@ -21,6 +21,7 @@ export class MUISelect implements ComponentFramework.ReactControl<IInputs, IOutp
         this.autoHeight=0;
         this.autoWidth=0;
         this.selectedValue = "";
+        
     }
 
     onChange(newValue: string) {
@@ -109,7 +110,7 @@ export class MUISelect implements ComponentFramework.ReactControl<IInputs, IOutp
 
     public getOutputs(): IOutputs {
         return { 
-            SelectedItems: this.selectedValue
+            PickedItems: this.selectedValue
         } as IOutputs;
     }
 

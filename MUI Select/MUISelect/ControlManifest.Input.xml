@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <manifest>
-  <control namespace="MUIControls" constructor="MUISelect" version="0.0.1" display-name-key="MUISelect" description-key="MUISelect description" control-type="virtual" >
+  <control namespace="MUIControls" constructor="MUISelect" version="1.0.2" display-name-key="MUISelect" description-key="MUISelect description" control-type="virtual" >
     <!--external-service-usage node declares whether this 3rd party PCF control is using external service or not, if yes, this control will be considered as premium and please also add the external domain it is using.
     If it is not using any external service, please set the enabled="false" and DO NOT add any domain below. The "enabled" will be false by default.
     Example1:
@@ -79,7 +79,7 @@
     <property name="PrimaryColor" display-name-key="Primary Color" description-key="Primary color" of-type="SingleLine.Text" usage="input" required="false"/>
 
     <!-- output properties -->
-    <property name="SelectedItems" display-name-key="SelectedItems" description-key="Selected Items" of-type="SingleLine.Text" usage="output"></property>
+    <property name="PickedItems" display-name-key="PickedItems" description-key="Items selected" of-type="SingleLine.Text" usage="output"></property>
     <!-- 
     <property name="AutoHeight" display-name-key="Auto Height" description-key="Control auto height" of-type="Decimal" usage="output"></property>
     <property name="AutoWidth" display-name-key="Auto Width" description-key="Control auto width" of-type="Decimal" usage="output"></property>

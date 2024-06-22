@@ -10,7 +10,7 @@ import Checkbox from '@mui/material/Checkbox';
 import Chip from '@mui/material/Chip';
 import Box from '@mui/material/Box';
 import { Theme, useTheme } from '@mui/material/styles';
-import { on } from 'events';
+import Zoom from '@mui/material/Zoom'; 
 
 export interface ISelectProps {
     items: ComponentFramework.PropertyTypes.DataSet;
@@ -206,6 +206,9 @@ const MUISelectControl: React.FC<ISelectProps> = (props) => {
           value={selectValue}
           label={props?.label} 
           onChange={handleChange}
+          MenuProps={{
+            TransitionComponent: Zoom
+          }}
           renderValue={() => {
             if (selectedRecords.length === 0) 
               {return <em>{Utils.handleDefault(props.placeholder)}</em>}
