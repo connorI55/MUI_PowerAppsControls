@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <manifest>
-  <control namespace="MUIControls" constructor="MUISelect" version="1.0.2" display-name-key="MUISelect" description-key="MUISelect description" control-type="virtual" >
+  <control namespace="MUIControls" constructor="MUISelect" version="1.0.6" display-name-key="MUISelect" description-key="MUISelect description" control-type="virtual" >
     <!--external-service-usage node declares whether this 3rd party PCF control is using external service or not, if yes, this control will be considered as premium and please also add the external domain it is using.
     If it is not using any external service, please set the enabled="false" and DO NOT add any domain below. The "enabled" will be false by default.
     Example1:
@@ -18,8 +18,8 @@
       -->
     </external-service-usage>
     <!-- input properties -->
-    <data-set name="Items" display-name-key="Data source"/>
-    <property name="DisplayColumns" display-name-key="Display Columns" description-key="CSV list of columns to display" of-type="SingleLine.Text" usage="input" required="false"/>
+    <data-set name="Data" display-name-key="Data source"/>
+    <property name="DisplayFields" display-name-key="Display Columns" description-key="CSV list of columns to display" of-type="SingleLine.Text" usage="input" required="false"/>
     <property name="Label" display-name-key="Label" description-key="Textbox label" of-type="SingleLine.Text" usage="input" required="false" default-value="label"/>
     <property name="Placeholder" display-name-key="Placeholder" description-key="Textbox placeholder" of-type="SingleLine.Text" usage="input" required="false"/>
     <property name="Default" display-name-key="Default" description-key="Textbox default value" of-type="SingleLine.Text" usage="input" required="false"/>
@@ -47,7 +47,7 @@
       <value name="Chips" display-name-key="Chips">chips</value>
     </property>
     
-    <property name="Align" display-name-key="Align" description-key="Horizontal alignment" of-type="Enum" usage="input" required="true" default-value="flex-start">
+    <property name="Align" display-name-key="Align" description-key="Horizontal alignment" of-type="Enum" usage="input" required="true" default-value="center">
       <value name="Start" display-name-key="Start">flex-start</value>
       <value name="Center" display-name-key="Center">center</value>
       <value name="End" display-name-key="End">flex-end</value>
@@ -61,7 +61,11 @@
       <value name="None" display-name-key="None">none</value>
       <value name="Error" display-name-key="Error">error</value>
     </property>
-     <property name="AutoWidth" display-name-key="Auto Width" description-key="Expand control width" of-type="TwoOptions" usage="input" required="true" default-value="false">
+    <property name="ExpandWidth" display-name-key="Expand Width" description-key="Expand control width" of-type="TwoOptions" usage="input" required="true" default-value="true">
+      <value name="True" display-name-key="True">true</value>
+      <value name="False" display-name-key="False">false</value>
+    </property>
+    <property name="ExpandHeight" display-name-key="Expand Height" description-key="Expand control height" of-type="TwoOptions" usage="input" required="true" default-value="false">
       <value name="True" display-name-key="True">true</value>
       <value name="False" display-name-key="False">false</value>
     </property>
@@ -80,10 +84,8 @@
 
     <!-- output properties -->
     <property name="PickedItems" display-name-key="PickedItems" description-key="Items selected" of-type="SingleLine.Text" usage="output"></property>
-    <!-- 
-    <property name="AutoHeight" display-name-key="Auto Height" description-key="Control auto height" of-type="Decimal" usage="output"></property>
-    <property name="AutoWidth" display-name-key="Auto Width" description-key="Control auto width" of-type="Decimal" usage="output"></property>
-    -->
+    <property name="AutoHeight" display-name-key="Auto Height" description-key="Control auto height, turn off expand height" of-type="Decimal" usage="output"></property>
+    <property name="AutoWidth" display-name-key="Auto Width" description-key="Control auto width, turn off expand width" of-type="Decimal" usage="output"></property>
     <!-- dataset node represents a set of entity records on CDS; allow more than one datasets -->
     <resources>
       <code path="index.ts" order="1"/>
@@ -91,7 +93,7 @@
       <!-- <platform-library name="Fluent" version="8.29.0" /> -->
       <!-- UNCOMMENT TO ADD MORE RESOURCES
       <css path="css/MUISelect.css" order="1" />
-      <resx path="strings/MUISelect.1033.resx" version="1.0.0" />
+      <resx path="strings/MUISelect.1033.resx" version="2.2.7" />
       -->
     </resources>
     <!-- UNCOMMENT TO ENABLE THE SPECIFIED API

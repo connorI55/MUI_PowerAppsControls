@@ -52,6 +52,7 @@ export class MUISelect implements ComponentFramework.ReactControl<IInputs, IOutp
         state: ComponentFramework.Dictionary
     ): void {
         this.notifyOutputChanged = notifyOutputChanged;
+        context.mode.trackContainerResize(true);
     }
 
     /**
@@ -63,11 +64,13 @@ export class MUISelect implements ComponentFramework.ReactControl<IInputs, IOutp
         console.log("updateView Called")
         const inputs = context.parameters
         const appTheme = context.fluentDesignLanguage?.tokenTheme
-        const cleanedDisplayColumns = inputs.DisplayColumns?.raw?.replace(/\s/g, '');
+        const cleanedDisplayColumns = inputs.DisplayFields?.raw?.replace(/\s/g, '');
         const displayColumnsArray = cleanedDisplayColumns ? cleanedDisplayColumns.split(",") : [];
         const props: ISelectProps =
         { 
-            items: inputs.Items,
+            records: inputs.Data.records,
+            columns: inputs.Data.columns,
+            sortedRecordIDs: inputs.Data.sortedRecordIds,
             displayColumns: displayColumnsArray,
             label: inputs.Label?.raw || "",
             style: inputs.Style.raw,
@@ -77,12 +80,9 @@ export class MUISelect implements ComponentFramework.ReactControl<IInputs, IOutp
             placeholder: inputs.Placeholder?.raw || "",
             helperText: inputs.HelperText?.raw || "",
             size: inputs.Size.raw,
-            //mode: inputs.Mode.raw,
-            //rows: inputs.Rows.raw as number,
             required: inputs.Required.raw,
-            autoWidth: inputs.AutoWidth.raw,
-            //adornmnetPosition: inputs.AdornmentPosition.raw,
-            //adornmentValue: inputs.AdornmentValue?.raw || "",
+            expandWidth: inputs.ExpandWidth.raw,
+            expandHeight: inputs.ExpandHeight.raw,
             align: inputs.Align.raw,
             verticalAlign: inputs.VerticalAlign.raw,
             appTheme: appTheme,
@@ -95,7 +95,9 @@ export class MUISelect implements ComponentFramework.ReactControl<IInputs, IOutp
             fontWeight: inputs.FontWeight.raw,
             fontColor: inputs.FontColor?.raw as string,
             primaryColor: inputs.PrimaryColor?.raw as string,
-            validationState: inputs.ValidationState.raw
+            validationState: inputs.ValidationState.raw,
+            containerHeight: context.mode.allocatedHeight,
+            containerWidth: context.mode.allocatedWidth
         };
         return React.createElement(
             MUISelectControl_Class, props
@@ -110,7 +112,9 @@ export class MUISelect implements ComponentFramework.ReactControl<IInputs, IOutp
 
     public getOutputs(): IOutputs {
         return { 
-            PickedItems: this.selectedValue
+            PickedItems: this.selectedValue,
+            AutoHeight: this.autoHeight,
+            AutoWidth: this.autoWidth
         } as IOutputs;
     }
 

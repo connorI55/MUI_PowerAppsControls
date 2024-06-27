@@ -13,22 +13,21 @@ import { Theme, useTheme } from '@mui/material/styles';
 import Zoom from '@mui/material/Zoom'; 
 
 export interface ISelectProps {
-    items: ComponentFramework.PropertyTypes.DataSet;
-    displayColumns?: string[];
+    records: ComponentFramework.PropertyTypes.DataSet["records"];
+    columns: ComponentFramework.PropertyTypes.DataSet["columns"];
+    sortedRecordIDs: ComponentFramework.PropertyTypes.DataSet["sortedRecordIds"];
+    displayColumns: string[];
     label?: string;
-    //size: "small" | "medium" | "large";
     default?: string;
     placeholder?: string;
     helperText?: string;
     style?: "standard" | "filled" | "outlined";
     multiSelect: boolean;
     multiSelectStyle: "default" | "checkmarks" | "chips";
-    //rows?: number;
     size: "small" | "medium" ;
     required: boolean;
-    autoWidth: boolean;
-    //adornmentValue?: string;
-    //adornmnetPosition: "start" | "end";
+    expandWidth: boolean;
+    expandHeight: boolean;
     align: "flex-start" | "center" | "flex-end";
     verticalAlign: "flex-start" | "center" | "flex-end";
     appTheme: ComponentFramework.Theme,
@@ -43,6 +42,8 @@ export interface ISelectProps {
     primaryColor?: string;
     focus?: boolean;
     validationState: "error" | "none";
+    containerHeight: number,
+    containerWidth: number
   }
 
   function getStyles(name: string, personName: readonly string[], theme: Theme) {
@@ -60,26 +61,26 @@ const MUISelectControl: React.FC<ISelectProps> = (props) => {
   const parentKey = React.useMemo(() => Utils.generateGUID(), []);
   const boxRef = React.useRef<HTMLDivElement>(null);
   const formRef = React.useRef<HTMLDivElement>(null);
-  const records = props.items.sortedRecordIds.map(id => props.items?.records[id]) ?? [];
-  const columns = props.items.columns;
+  const records = props.sortedRecordIDs.map(id => props.records[id]) ?? [];
+  const columns = props.columns;
   const columnNames = columns.map(col => col.name);
   const displayColumns = Utils.handleDisplayColumns(props.displayColumns ?? [], columnNames);
   const selectedRecords: ComponentFramework.PropertyHelper.DataSetApi.EntityRecord[] = 
     records.filter(record => selectedItemIDs.some(id => id === record?.getRecordId()));
-  const selectedRecordValues = selectedRecords.map(record => {
-    const values: { [key: string]: string } = {};
-    columnNames.forEach(column => {
-      values[column] = record.getFormattedValue(column);
-    });
-    return values;
-  });
+  // const selectedRecordValues = selectedRecords.map(record => {
+  //   const values: { [key: string]: string } = {};
+  //   columnNames.forEach(column => {
+  //     values[column] = record.getFormattedValue(column);
+  //   });
+  //   return values;
+  // });
   const selectedDisplayValue = selectedRecords[0] ? selectedRecords?.map(record => record.getFormattedValue(displayColumns.primaryColumn)).join(', ') : '';
   const selectValue = props.multiSelect ? selectedItemIDs : selectedItemIDs[0] ?? '';
   const cleanedHelperText = Utils.handleDefault(props.helperText);
 
   const handleChange = (event: SelectChangeEvent<string | string[]>) => {
     let newValues = event.target.value;
-    let selectedRecords: ComponentFramework.PropertyHelper.DataSetApi.EntityRecord[];
+    //let selectedRecords: ComponentFramework.PropertyHelper.DataSetApi.EntityRecord[];
   
     if(Array.isArray(newValues)){
       setSelectedIDs(newValues)
@@ -139,13 +140,16 @@ const MUISelectControl: React.FC<ISelectProps> = (props) => {
    
     const selectedRecords: ComponentFramework.PropertyHelper.DataSetApi.EntityRecord[] = 
       records.filter(record => selectedItemIDs.some(id => id === record?.getRecordId()));
+    const returnColumns = 
+      props.displayColumns.length > 0 ? props.displayColumns : props.columns.map(record => record.name);
     const selectedRecordValues = selectedRecords.map(record => {
       const values: { [key: string]: string } = {};
-      columnNames.forEach(column => {
+      returnColumns.forEach(column => {
         values[column] = record.getFormattedValue(column);
       });
       return values;
     });
+    //const selectedIDValues = selectedItemIDs.map((id) => parseInt(id.replace("id", "")));
     
     props.onChange(JSON.stringify(selectedRecordValues));
 
@@ -156,8 +160,8 @@ const MUISelectControl: React.FC<ISelectProps> = (props) => {
   }, [props.multiSelect])
 
   React.useEffect(() => {
-    if (boxRef.current && formRef.current) {
-      const style = window.getComputedStyle(boxRef.current);
+    if (formRef.current) {
+      const style = window.getComputedStyle(formRef.current);
       const marginLeft = parseFloat(style.marginLeft);
       const marginRight = parseFloat(style.marginRight);
       const totalMargin = marginLeft + marginRight;
@@ -166,8 +170,9 @@ const MUISelectControl: React.FC<ISelectProps> = (props) => {
       const currentWidth = formRef.current.clientWidth + totalMargin + 1;
       props.handleAutoSizing(currentHeight, currentWidth);
     }
-  }, [props.font, props.fontSize, props.fontWeight, props.label, props.size, props.align, props.verticalAlign, boxRef.current?.clientWidth]);
+  }, [props.expandHeight, props.expandWidth, props.size, props.containerHeight, props.containerWidth, props.label, props.helperText, props.validationState, props.multiSelect, props.placeholder, props.style]);
  
+    console.log("height log: " + formRef.current?.clientHeight)
 
   return (
     <ThemeProvider theme={theme} key={parentKey}>
@@ -178,12 +183,14 @@ const MUISelectControl: React.FC<ISelectProps> = (props) => {
           display: "flex",
           flexDirection: "column",
           justifyContent: props.verticalAlign,
-          width: "100%"
+          width: props.containerWidth + "px",
+          height: props.containerHeight + "px"
         }
         }>
       <FormControl 
+        ref={formRef}
         variant={props.style}
-        fullWidth={!props.autoWidth} 
+        fullWidth={props.expandWidth} 
         key={parentKey} 
         required={props.required} 
         disabled={props.isEnabled} 
@@ -192,7 +199,8 @@ const MUISelectControl: React.FC<ISelectProps> = (props) => {
         sx={{ 
           minWidth: 80,
           margin: "5px",
-          alignSelf: props.verticalAlign
+          alignSelf: props.align,
+          height: props.expandHeight ? "100%" : "auto"
         }}
       >
         <InputLabel 
@@ -202,7 +210,7 @@ const MUISelectControl: React.FC<ISelectProps> = (props) => {
           labelId={parentKey + "-select-label"}
           id={parentKey + "-select-id"}
           multiple={props.multiSelect}
-          autoWidth={props.autoWidth}
+          autoWidth={props.expandWidth}
           value={selectValue}
           label={props?.label} 
           onChange={handleChange}
@@ -250,7 +258,6 @@ const MUISelectControl: React.FC<ISelectProps> = (props) => {
                   {displayColumns.displayColumns.map((otherColumn) => {
                     const formattedValue = record?.getFormattedValue(otherColumn);
                     const isHTML = formattedValue && formattedValue.trim().startsWith('<');
-                    
 
                     if (!isHTML) {
                       return (
