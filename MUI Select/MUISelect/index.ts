@@ -72,6 +72,7 @@ export class MUISelect implements ComponentFramework.ReactControl<IInputs, IOutp
             columns: inputs.Data.columns,
             sortedRecordIDs: inputs.Data.sortedRecordIds,
             displayColumns: displayColumnsArray,
+            groupByColumn: inputs.GroupByField.raw || "",
             label: inputs.Label?.raw || "",
             style: inputs.Style.raw,
             multiSelect: inputs.MultipleSelection.raw,

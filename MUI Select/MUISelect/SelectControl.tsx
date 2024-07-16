@@ -1,6 +1,7 @@
 import * as React from 'react';
 import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
+import StandardMenuItemComponent from './StandardMenuItem';
+import GroupedMenuItemComponent from './groupedMenuItem';
 import FormControl from '@mui/material/FormControl';
 import FormHelperText from '@mui/material/FormHelperText';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
@@ -17,6 +18,7 @@ export interface ISelectProps {
     columns: ComponentFramework.PropertyTypes.DataSet["columns"];
     sortedRecordIDs: ComponentFramework.PropertyTypes.DataSet["sortedRecordIds"];
     displayColumns: string[];
+    groupByColumn: string;
     label?: string;
     default?: string;
     placeholder?: string;
@@ -67,36 +69,21 @@ const MUISelectControl: React.FC<ISelectProps> = (props) => {
   const displayColumns = Utils.handleDisplayColumns(props.displayColumns ?? [], columnNames);
   const selectedRecords: ComponentFramework.PropertyHelper.DataSetApi.EntityRecord[] = 
     records.filter(record => selectedItemIDs.some(id => id === record?.getRecordId()));
-  // const selectedRecordValues = selectedRecords.map(record => {
-  //   const values: { [key: string]: string } = {};
-  //   columnNames.forEach(column => {
-  //     values[column] = record.getFormattedValue(column);
-  //   });
-  //   return values;
-  // });
+  const groupByCategories = Array.from(new Set(records.map(record => record.getFormattedValue(props.groupByColumn))));
   const selectedDisplayValue = selectedRecords[0] ? selectedRecords?.map(record => record.getFormattedValue(displayColumns.primaryColumn)).join(', ') : '';
   const selectValue = props.multiSelect ? selectedItemIDs : selectedItemIDs[0] ?? '';
   const cleanedHelperText = Utils.handleDefault(props.helperText);
 
-  const handleChange = (event: SelectChangeEvent<string | string[]>) => {
-    let newValues = event.target.value;
-    //let selectedRecords: ComponentFramework.PropertyHelper.DataSetApi.EntityRecord[];
-  
-    if(Array.isArray(newValues)){
-      setSelectedIDs(newValues)
-
-    }
-    else if(!Array.isArray(newValues) && newValues === selectedItemIDs[0]) {
-      setSelectedIDs([])
-    }
-    else if (!Array.isArray(newValues)) {
-      setSelectedIDs([newValues])
-    }
-
-  };
-
   const handleClick = (id: string) => {
-    selectedItemIDs[0] === id ? setSelectedIDs([]) : setSelectedIDs([id]);
+    if (props.multiSelect) {
+      if (selectedItemIDs.includes(id)) {
+        setSelectedIDs(selectedItemIDs.filter(item => item !== id));
+      } else {
+        setSelectedIDs([...selectedItemIDs, id]);
+      }
+    } else {
+      setSelectedIDs(selectedItemIDs[0] === id ? [] : [id]);
+    }
   }
 
   
@@ -157,7 +144,7 @@ const MUISelectControl: React.FC<ISelectProps> = (props) => {
 
   React.useEffect(() => {
       setSelectedIDs([] as string[]);
-  }, [props.multiSelect])
+  }, [props.multiSelect, props.groupByColumn, props.default])
 
   React.useEffect(() => {
     if (formRef.current) {
@@ -213,7 +200,6 @@ const MUISelectControl: React.FC<ISelectProps> = (props) => {
           autoWidth={props.expandWidth}
           value={selectValue}
           label={props?.label} 
-          onChange={handleChange}
           MenuProps={{
             TransitionComponent: Zoom
           }}
@@ -238,54 +224,49 @@ const MUISelectControl: React.FC<ISelectProps> = (props) => {
           }}
         >
       
-          {records.map((record) => {
+      {
+        Utils.handleDefault(props.groupByColumn) === "" || props.groupByColumn === null ? (
+          records.map((record) => {
             const id = record?.getRecordId();
             const formattedPrimaryValue = record?.getFormattedValue(displayColumns.primaryColumn);
             return (
-              <MenuItem 
-              key={id} 
-              value={id}
-              onClick={() => !props.multiSelect ? handleClick(id) : null}
-              >
-                <div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', width: '100%'}}>
-                    {props.multiSelectStyle === "checkmarks" ? <Checkbox checked={selectedItemIDs.indexOf(id) > -1} /> : null}
-                    <Typography variant="body1" color="textPrimary">
-                      {formattedPrimaryValue}
-                    </Typography>
-                  </div>
-                  <div style={{ display: 'flex', width: '100%', flexDirection: 'column' }}>
-                  {displayColumns.displayColumns.map((otherColumn) => {
-                    const formattedValue = record?.getFormattedValue(otherColumn);
-                    const isHTML = formattedValue && formattedValue.trim().startsWith('<');
-
-                    if (!isHTML) {
-                      return (
-                        <Typography variant="body2" color="textSecondary" key={`${id}-${otherColumn}`}>
-                          <div>{formattedValue}</div>
-                        </Typography>
-                      );
-                    }
-                    else if (isHTML) {
-                      const validatedHTML = Utils.validateHTML(formattedValue);
-                      if (validatedHTML.isValid) {
-                        return <span key={`${id}-${otherColumn}`} dangerouslySetInnerHTML={{ __html: validatedHTML.sanitizedHTML as string }} />
-                      }
-                      else {
-                        return (
-                          <Typography variant="body2" color="textSecondary" key={`${id}-${otherColumn}`}>
-                            <div>HTML detected, but is invalid</div>
-                          </Typography>
-                        );
-                      
-                      }
-                    }
-                })}
-                  </div>
-                </div>
-              </MenuItem>
+              <StandardMenuItemComponent
+                key={id}
+                id={id}
+                formattedPrimaryValue={formattedPrimaryValue}
+                selectedItemIDs={selectedItemIDs}
+                multiSelect={props.multiSelect}
+                multiSelectStyle={props.multiSelectStyle}
+                handleClick={handleClick}
+                displayColumns={displayColumns.displayColumns}
+                record={record}
+                Utils={Utils}
+              />
             );
-          })}
+          })
+        ) : (
+          groupByCategories.map((thiscategory) => {
+            const filteredRecords = records.filter(record => record.getFormattedValue(props.groupByColumn) === thiscategory);
+            const formattedGroupName = thiscategory;
+            return (
+              <GroupedMenuItemComponent
+                key={formattedGroupName}
+                id={formattedGroupName}
+                formattedPrimaryValue={formattedGroupName}
+                selectedItemIDs={selectedItemIDs}
+                multiSelect={props.multiSelect}
+                multiSelectStyle={props.multiSelectStyle}
+                handleClick={handleClick}
+                displayColumns={displayColumns}
+                record={records[0]}
+                Utils={Utils}
+                formattedGroupName={formattedGroupName}
+                filteredRecords={filteredRecords}
+              />
+            );
+          })
+        )
+      }
           
         </Select>
         {cleanedHelperText && <FormHelperText>{cleanedHelperText}</FormHelperText>}
